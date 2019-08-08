@@ -8,13 +8,13 @@ export default {
         icon_name: 'Home'
       },
       {
-        name: 'créer',
-        url_link: '/idea/create-idea',
+        name: 'publier',
+        url_link: '/publications/create',
         icon_name: 'Add'
       },
       {
         name: 'rechercher',
-        url_link: '/search',
+        url_link: '/publications/search',
         icon_name: 'Search'
       },
       {

@@ -1,7 +1,7 @@
 <template>
   <div id="app">
-  <Header></Header>
-  <div class="spacer-header"></div>
+    <Header></Header>
+    <div class="spacer-header"></div>
     <router-view/>
   </div>
 </template>
@@ -22,10 +22,10 @@ export default {
 
   .spacer-header
     position relative
-    height ( navbar-height + sub-navbar-height)
+    height 0
 
   @media screen and (max-width: 992px)
     .spacer-header
-      height ( navbar-height-mobile + sub-navbar-height-mobile)
+      height ( navbar-height)
 
 </style>

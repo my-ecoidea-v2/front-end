@@ -1,5 +1,5 @@
 {
-  "name": "hello-world",
+  "name": "My-Ecoidea-v2",
   "version": "0.1.0",
   "private": true,
   "scripts": {
@@ -14,6 +14,7 @@
     "vue-class-component": "^7.0.2",
     "vue-property-decorator": "^8.1.0",
     "vue-router": "^3.0.3",
+    "vue-svg-loader": "^0.11.0",
     "vuex": "^3.0.1"
   },
   "devDependencies": {
@@ -31,6 +32,8 @@
     "stylus": "^0.54.5",
     "stylus-loader": "^3.0.2",
     "typescript": "^3.4.3",
+    "vue-cli-plugin-svg-loader": "^1.0.0",
+    "vue-svg-loader": "^0.12.0",
     "vue-template-compiler": "^2.6.10"
   }
 }

@@ -1,89 +1,56 @@
 @import "../../../assets/stylesheets/master.styl"
 
-navbar-height = 50px
-sub-navbar-height = 70px
-navbar-height-mobile = 50px
-sub-navbar-height-mobile = 50px
+navbar-height = 65px
+navbar-height-mobile = 40px
 
 .navbar
-  z-index 1000
+  z-index 100
   height navbar-height
   width 100vw
   background-color #fefefe
-  border-radius 0
   margin 0
   position fixed
   top 0
   left 0
-  line-height navbar-height
-  .brand
-    padding-left 25px
-    float left
-    a
-      color app-color-dark
-      text-decoration none
-      font-family Arial, Helvetica, sans-serif
-      font-size 1.75em
-      vertical-align middle
-      img 
-        height ( navbar-height - 20px)
-        vertical-align middle
-
-.sub-navbar
-  z-index 100
-  height sub-navbar-height
-  width 100vw
-  background-color #fefefe
-  margin 0
-  position fixed
-  top navbar-height
-  left 0
   box-shadow 0 0 2px 3px #e3e3e3
   .nav-box
-    height sub-navbar-height
+    height navbar-height
     text-align center
     display flex
     flex-direction column-reverse
+    transition: all .5s
+    border-radius: 10px
     ul
       padding 0
       margin 0
       list-style-type none
       li
-        height sub-navbar-height
+        height navbar-height
         width 100%
         position relative
         img
           margin-top 10px
-          height (sub-navbar-height - 30px)
+          height (navbar-height - 35px)
         span
           display block
           margin 0
-          height 10px
           color app-color
-.nav-boxhover
-  box-shadow inset 0 0 0 100vw #eeeeee
+          margin-bottom: 10px
+          
+.nav-box:hover
+   box-shadow inset 0 0 0 5vw #eeeeee
 
 #logo
   height 50px
 
 
-@media screen and (max-width 992px)
+@media screen and (max-width 768px)
   .navbar
     height navbar-height-mobile
-    line-height navbar-height-mobile
-    .brand
-      a
-        font-size 1.5em
-        color app-color-dark
-        img 
-          height ( navbar-height-mobile - 20px)
-  .sub-navbar
-    height sub-navbar-height-mobile
-    top navbar-height-mobile
     .nav-box
-      height sub-navbar-height-mobile
+      height navbar-height-mobile
       ul
         li
-          height sub-navbar-height-mobile
+          height navbar-height-mobile
           img 
-            height (sub-navbar-height-mobile - 30px)
+            height (navbar-height-mobile - 10px)
