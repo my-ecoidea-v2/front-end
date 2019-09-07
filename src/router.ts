@@ -25,27 +25,27 @@ export default new Router({
       component: Home
     },
     {
-      path: '/account',
+      path: '/mon-compte',
       name: 'account',
       component: () => import('@/views/account/Account.vue')
     },
     {
-      path: '/account/login',
+      path: '/mon-compte/connexion',
       name: 'login',
       component: () => import('@/views/account/login/Login.vue')
     },
     {
-      path: '/account/register',
+      path: '/mon-compte/inscription',
       name: 'register',
       component: () => import('@/views/account/register/Register.vue')
     },
     {
-      path: '/publications/create',
+      path: '/publications/creer',
       name: 'publications-create',
       component: () => import('@/views/publications/create/Create.vue')
     },
     {
-      path: '/publications/search',
+      path: '/publications/chercher',
       name: 'publications-search',
       component: () => import('@/views/publications/search/Search.vue')
     }
