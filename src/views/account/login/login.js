@@ -13,7 +13,7 @@ export default {
   },
   methods: {
     validated: function() {
-      fetch('http://127.0.0.1:8000/api/login', {
+      fetch('http://account.api.my-ecoidea.org/api/login', {
         method: 'post',
         credentials: "same-origin",
         headers: {
@@ -27,19 +27,34 @@ export default {
       .then((data) => {
         $("#email").removeClass("error");
         $("#password").removeClass("error");
-        if (Object.keys(JSON.parse(data)) == "error")
+        if (Object.keys(JSON.parse(data)).includes("error"))
         {
           $("#email").addClass("error");
           $("#password").addClass("error");
           this.error = JSON.parse(data)['error']
         }
-        if (Object.keys(JSON.parse(data)) == "token")
+        if (Object.keys(JSON.parse(data)).includes("token"))
         {
           $("#email").addClass("valid");
           $("#password").addClass("valid");
-          document.cookie = "token="+JSON.parse(data)['token'];
+          localStorage.user_token = JSON.parse(data)['token'];
           router.push('/');
           store.commit('setLogin');
+          fetch('http://account.api.my-ecoidea.org/api/user', {
+            method: 'get',
+            credentials: "same-origin",
+            headers: {
+              'Accept': 'application/json, text/plain, */*',
+              'Content-Type': 'application/json',
+              "cache-control": "no-cache",
+              'Authorization': 'Bearer '+localStorage.user_token, 
+            }
+          })
+          .then(response => {return response.text()})
+          .then((data) => {
+            localStorage.user_email = JSON.parse(data)['user']['email']
+            localStorage.user_name = JSON.parse(data)['user']['name']
+          });
         }
       });
     }

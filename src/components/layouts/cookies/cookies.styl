@@ -1,0 +1,39 @@
+cookieconstent-padding = 1rem 0
+cookieconstent-space = .5rem 1rem
+cookieconstent-position = fixed
+cookieconstent-background = #fefefe
+cookieconstent-z-index = 9999
+cookieconstent-width = 100%
+
+cookieconstent-compliance-padding = .5rem 2rem
+cookieconstent-compliance-color = #fff
+cookieconstent-compliance-background = #85C174
+cookieconstent-compliance-border = 2px solid currentColor
+
+.cookie-consent
+  position: cookieconstent-position;
+  z-index: cookieconstent-z-index;
+  width: cookieconstent-width;
+  padding: cookieconstent-padding;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  background-color: cookieconstent-background
+  box-shadow: 0 0 5px 2px #eeeeee
+  &-message, &-compliance
+    margin: cookieconstent-space;
+    font-size: 1.25em
+  &-compliance
+    border-radius: 15px
+    cursor: pointer;
+    color: cookieconstent-compliance-color;
+    padding: cookieconstent-compliance-padding;
+    background: cookieconstent-compliance-background;
+    border: none
+
+&-leave-active 
+  transition: transform .75s;
+  transition-timing-function: cubic-bezier(.75,0,0,1);
+&-leave-to
+  transform: translateY(100%);

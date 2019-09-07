@@ -12,6 +12,7 @@
   width: auto
   display inline-block
   border-bottom: 3px solid app-color
+  margin-bottom: 15px
   h1
     font-size: 2em
     font-weight: bold
@@ -31,10 +32,10 @@
     margin-bottom: 5px
     line-height: 35px
     text-align: left
-    #picture
+    .picture
       height 30px
       border-radius: 50%
-    #username
+    .username
       display inline
       vertical-align: middle
       font-size: 1em
@@ -48,58 +49,65 @@
     line-height: 45px
     .action
       text-align: center
-    #like
+      border-left: 1px solid #eeeeee
+      border-right: 1px solid #eeeeee
+      box-sizing: border-box
+      height 45px
+    .action:first-child
+      border-left : 0
+    .action:last-child
+      border-right : 0
+    .like
       display inline
-      img 
+      cursor pointer
+      svg 
         height 25px
-        color: app-color
+        color: app-color-dark
         vertical-align: middle
+        display inline-block
       p
         display inline
         margin-left: 2.5px
-        color: app-color
-    #follow
-      margin-left: 15px
-      width: 100px
+        color: app-color-dark
+        font-weight: bold
+    .follow
       display inline
-      img 
+      cursor pointer
+      svg 
         height 25px
-        color: app-color
+        color: app-color-dark
         vertical-align: middle
+        display inline-block
       p
         display inline
         margin-left: 2.5px
-        color: app-color
-    #discover
-      img 
+        color: app-color-dark
+        font-weight: bold
+    .discover
+      display inline-block
+      cursor pointer
+      svg 
         height 25px
         vertical-align: middle
         display inline-block
-        svg 
-          fill: app-color
+        color: app-color
       p
-        display inline
+        display inline-block
         margin-left: 2.5px
         color: app-color
-      cursor pointer
-
-.box:nth-child(2)
-  border-radius: 0px
-  border-bottom-right-radius: 15px
-  border-bottom-left-radius: 15px
-  box-shadow: 0 2px 5px 1px #eeeeee
+        font-weight: bold
 
 .slogan
-  #type
+  .type
     color app-color
     font-weight: bold
     display inline
-  #text
+  .text
     font-size: 1em
     display inline
 
 .idea
-  #keyword
+  .keyword
     font-size: 1em
     display inline
     margin-right: 5px
@@ -109,50 +117,52 @@
     padding-right: 5px
     border-radius: 5px
     color #fefefe
-  #categories
+  .categories
     float right
     box-sizing: border-box
     color: app-color
     font-weight: bold
     display inline
-    img 
+    svg 
       height 15px
       display inline
       vertical-align: middle
-  #description
+  .description
     font-size: 1em
     text-align: justify
     margin-top: 5px
   .box-idea-details
     display: none
-    #title
-      border-top: 2px solid app-color
+    padding-bottom: 25px
+    .title
+      border-top: 2px solid #eeeeee
       padding-top: 5px
       font-size: 1.5em
       font-weight: bold
-    #text
+    .text
       font-size: 1em
       text-align: justify
-    #links
+    .links
       margin-top: 10px
       line-height: 10px
       p
-        color #63a4ff
-        img 
+        color .63a4ff
+        svg 
           height 10px
           margin-left: 5px
-    #images
+    .images
       margin-top: 5px
       img 
-        height 100px
-        border: 2px solid #eeeeee
-        margin 5px
+        border: 2px solid app-color-dark
         border-radius: 5px
+        margin: 5px
+        height 100px
+        padding: 0
 
 .selection
   width auto
   padding-top: 10px
-  #type
+  .type
     text-align: center
     font-size: 1.2em
     font-weight: bold

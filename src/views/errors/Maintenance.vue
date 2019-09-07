@@ -13,17 +13,20 @@
 </template>
 
 <style lang="stylus">
-.content
-  margin 25px
-  border 2px solid #eeeeee
+.maintenance
   text-align center
-  padding 25px
-  img 
-    height 200px
-  h1
-    font-size 2em
+  .content
+    margin-top 50px
     text-align center
-  p
-    margin-top 25px
-    text-align left
+    box-shadow 0 0 5px 2px #eeeeee
+    padding 25px
+    border-radius 15px
+    img 
+      height 200px
+      display inline-block
+    h1
+      font-size 2em
+      text-align center
+    p
+      margin-top 25px
 </style>

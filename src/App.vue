@@ -24,7 +24,7 @@ export default {
     position relative
     height 0
 
-  @media screen and (max-width: 992px)
+  @media screen and (max-width: 768px)
     .spacer-header
       height ( navbar-height)
 

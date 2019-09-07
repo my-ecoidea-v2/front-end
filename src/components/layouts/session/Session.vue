@@ -4,7 +4,7 @@
       <img src="@/assets/images/logo.png" alt="My-EcoIdea logo" class="img-rounded">
       <p>My-EcoIdea v2</p>
     </div>
-    <div class="account">
+    <div class="session-box">
       <ul>
         <li class="col-md-3 hidden-xs"></li>
         <router-link to="account/login"><li class="col-md-3 col-xs-6" ><div id="login">Connexion</div></li></router-link>
@@ -17,13 +17,5 @@
 </template>
 
 <style lang="stylus" src="./session.styl"></style>
-<script>
-import store from '@/store'
-
-export default {
-  store: store,
-}
-
-console.log(document.cookie)
-</script>
+<script src="./session.js"></script>
 

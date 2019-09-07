@@ -2,9 +2,9 @@
 @import "../../home.styl"
 
 .search
-  height 50px
   line-height: 45px
   text-align: center
+  padding-bottom: 10px
   #search-input
     height 45px
     display inline-block
@@ -21,8 +21,16 @@
     border-bottom-right-radius: 5px
     height 45px
     width 45px
-    line-height: 40px
-    padding-left 4px
+    line-height: 50px
     vertical-align: middle
-    img 
-      height: 25px
+    cursor pointer
+    position relative
+    svg 
+      height: 30px
+      position relative
+      display inline-block
+      line-height 50px
+      margin: 5.5px
+  #search-btn:hover
+    svg 
+      transform: scale(.8)

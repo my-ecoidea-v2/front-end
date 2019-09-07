@@ -1,10 +1,18 @@
-.account-page
+@import "../../../assets/stylesheets/master.styl"
+
+.account
+  border-top: 3.5px solid app-color
   z-index 100
   display: block
   margin 15px
   padding: 15px
+  position fixed
+  top 65px
+  right (100vw / 12 * 2 - 2px)
+  width: ((100vw / 12 * 3))
   height navbar-height
-  margin 15px
+  margin 0
+  margin-right: 15px
   border-radius: 25px
   text-align: center
   box-shadow: 0 0 5px 2px #eeeeee
@@ -45,3 +53,35 @@
     font-size: 1em
     background-color: #ef5350
     cursor pointer
+
+@media screen and (max-width 991px)
+  .account
+    right 10px
+    width: ((100vw / 12 * 4.5))
+
+@media screen and (max-width : 1500px)
+  .account
+    .account-user
+      #name
+        display: none !important
+
+  .account-user
+    text-align: left
+    img 
+      width: 45px
+      border-radius: 25px
+      display inline-block
+    #name
+      display inline-block
+      margin-left: 5px
+      font-weight: bold
+    #title
+      display inline
+      float right
+      margin-right: 25px
+      text-decoration: underline
+      text-decoration-color: app-color
+      cursor pointer
+    #title:hover
+      text-decoration: none
+      color app-color
