@@ -10,7 +10,7 @@ export default {
   },
   methods: {
     logout: function() {
-      fetch('http://account.api.my-ecoidea.org/api/logout', {
+      fetch('http://api.my-ecoidea.org/api/user/logout', {
         method: 'post',
         credentials: "same-origin",
         headers: {

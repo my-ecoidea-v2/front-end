@@ -25,6 +25,11 @@ export default new Router({
       component: Home
     },
     {
+      path: '/recherche',
+      name: 'search',
+      component: () => import('@/views/publications/search/Search.vue')
+    },
+    {
       path: '/mon-compte',
       name: 'account',
       component: () => import('@/views/account/Account.vue')
@@ -48,6 +53,11 @@ export default new Router({
       path: '/publications/chercher',
       name: 'publications-search',
       component: () => import('@/views/publications/search/Search.vue')
+    },
+    {
+      path: '/bienvenue',
+      name: 'landing',
+      component: () => import('@/views/landing/Landing.vue')
     }
   ]
 })
