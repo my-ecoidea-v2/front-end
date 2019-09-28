@@ -1,0 +1,102 @@
+@import "../../assets/stylesheets/master.styl"
+@import "../home.styl"
+
+.content
+  margin-top: 10px
+  padding: 0
+  padding-left: 15px
+  padding-right: 15px
+
+.page-title
+  background-color: #fefefe
+  padding: 5px
+  width: auto
+  display inline-block
+  border-bottom: 3px solid app-color
+  margin-bottom: 15px
+  h1
+    font-size: 2em
+    font-weight: bold
+    margin: 0
+
+
+.box
+  width: 100%
+  padding: 10px 15px 5px 15px;
+
+  margin-bottom: 15px;
+  border-radius: 20px;
+  box-shadow: 0 0 5px 2px #eeeeee
+  .box-actions
+    margin-top: 5px
+    height 45px
+    line-height: 45px
+    .action
+      text-align: center
+      border-left: 1px solid #eeeeee
+      border-right: 1px solid #eeeeee
+      box-sizing: border-box
+      height 45px
+    .action:first-child
+      border-left : 0
+    .action:last-child
+      border-right : 0
+    .like
+      display inline
+      cursor pointer
+      svg 
+        height 25px
+        color: app-color-dark
+        vertical-align: middle
+        display inline-block
+      p
+        display inline
+        margin-left: 2.5px
+        color: app-color-dark
+        font-weight: bold
+    .follow
+      display inline
+      cursor pointer
+      svg 
+        height 25px
+        color: app-color-dark
+        vertical-align: middle
+        display inline-block
+      p
+        display inline
+        margin-left: 2.5px
+        color: app-color-dark
+        font-weight: bold
+    .discover
+      display inline-block
+      cursor pointer
+      svg 
+        height 25px
+        vertical-align: middle
+        display inline-block
+        color: app-color
+      p
+        display inline-block
+        margin-left: 2.5px
+        color: app-color
+        font-weight: bold
+
+.profil
+  text-align: center
+  padding-top: 10px
+  .picture
+    height: 120px
+    width: 120px
+    // margin: 0 calc( 50% - 60px )
+    border-radius: 50%
+  .user-name
+    vertical-align: middle
+    font-size: 1.9em
+    font-weight: bold
+    border-radius: 10px
+    margin-bottom: 3px
+  .user-info
+    font-size: 0.9em
+  .user-desc
+    font-size: 1.1em
+    padding: 30px 0
