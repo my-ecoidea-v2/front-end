@@ -17,7 +17,7 @@ new Vue({
     isLogin: function() {
       if(localStorage.user_token != null)
       {
-        fetch('http://account.api.my-ecoidea.org/api/user', {
+        fetch('http://api.my-ecoidea.org/api/user/get', {
           method: 'get',
           credentials: "same-origin",
           headers: {

@@ -1,7 +1,6 @@
 <template>
   <div>
     <Cookies/>
-    <Session/>
       <div class="col-sm-2 content">
       </div>
       <div class="col-sm-5 content">

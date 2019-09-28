@@ -1,4 +1,3 @@
-import Session from '@/components/layouts/session/Session.vue'
 import Account from '@/components/layouts/account/Account.vue'
 import Cookies from '@/components/layouts/cookies/Cookies.vue'
 
@@ -12,7 +11,6 @@ import iconFollow from '@/assets/items/Follow.svg'
 export default {
   name: 'home',
   components: {
-    Session,
     iconLink,
     iconLogo,
     iconLike,

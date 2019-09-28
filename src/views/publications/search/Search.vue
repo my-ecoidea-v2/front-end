@@ -82,15 +82,6 @@
               <iconLink class="svg"></iconLink>
             </div>
           </div>
-          <div class="box-idea-details idea_exemple">
-            <p class="title">Détails de l'idée</p>
-            <div class="text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Autem quisquam voluptatem itaque facilis doloremque officia perferendis cumque in molestiae quo nihil odit placeat quaerat, accusantium necessitatibus dicta blanditiis laborum ea. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolore quidem ipsa nihil, pariatur eligendi, fugiat magni dolor exercitationem iure, nemo sed tempora. Adipisci dignissimos quos commodi repellendus tenetur numquam repellat.
-            </div>
-            <div class="links">
-              <p itemprop="url">source wikipéda<iconLink></iconLink></p>
-              <p itemprop="url">sarquentin.fr<iconLink></iconLink></p>
-            </div>
-          </div>
         </div>    
       </div>
       <div class="col-md-3 content">
