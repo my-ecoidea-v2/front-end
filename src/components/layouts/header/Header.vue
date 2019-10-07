@@ -1,23 +1,28 @@
 <template>
   <header>
-    <div class="menu row col-sm-3 row">
+    <div class="menu row col-sm-1 row">
       <ul>
-        <router-link to="/" class="hidden-xs"><img alt='My-EcoIdea logo' src="@/assets/images/logo.png"></router-link>
-        <router-link to="/" class="col-xs-2 col-sm-12">
-          <li><iconHome></iconHome></li>
-        </router-link>
-        <router-link to="/publications/search" class="col-xs-2 col-sm-12">
-          <li><iconSearch></iconSearch></li>
-        </router-link>
-        <router-link id="center" to="/publications/create" class="col-xs-4 col-sm-12">
-          <li><iconPublications></iconPublications></li>
-        </router-link>
-        <router-link to="/account/follow" class="col-xs-2 col-sm-12">
-          <li><iconFollow></iconFollow></li>
-        </router-link>
-        <router-link to="/account" class="col-xs-2 hidden-sm hidden-md hidden-lg">
-          <li><iconAccount></iconAccount></li>
-        </router-link>
+        <li id="logo">
+          <router-link to="/" class="hidden-xs">
+            <img alt='My-EcoIdea logo' src="@/assets/images/logo_w.png">
+            </router-link>
+        </li>
+        <li class="separate"></li>
+        <router-link to='/'><li>
+          <iconHome></iconHome>
+        </li></router-link>
+        <router-link to="/publications/search"><li>
+          <iconSearch></iconSearch>
+        </li></router-link>
+        <router-link id="center" to="/publications/create"><li>
+          <iconPublications></iconPublications>
+        </li></router-link>
+        <router-link to="/u/favoris"><li>
+          <iconFollow></iconFollow>
+        </li></router-link>
+        <router-link to="/account"><li>
+          <iconAccount></iconAccount>
+        </li></router-link>
       </ul>
     </div>
   </header>

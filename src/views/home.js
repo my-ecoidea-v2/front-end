@@ -6,8 +6,6 @@ import iconLogo from '@/assets/items/Logo_W.svg'
 import iconLike from '@/assets/items/Like.svg'
 import iconFollow from '@/assets/items/Follow.svg'
 
-
-
 export default {
   name: 'home',
   components: {
@@ -19,9 +17,9 @@ export default {
     Cookies
   },
   methods: {
-    discover: function(div) {
+    discover: function (div) {
       console.log('test')
-      $('#'+div).toggle();  
+      $('#' + div).toggle()
     }
   }
 }

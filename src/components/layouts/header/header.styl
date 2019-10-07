@@ -50,31 +50,60 @@ navbar-height = 50px
     margin 0
     position fixed
     top 0
-    padding: 50px
-    padding-right: 25px
-    border-radius: 25px
     text-align: center
+    background-color: app-color;
+    height 100vh;
+    width: 75px;
+    padding: 0;
     ul
       padding 0
       margin 0
       list-style-type none
       width 100%
+      height 75px;
+      width 75px;
       text-align: center
       img 
         display inline-block
-        height 100px
-        margin-bottom: 25px
+        height 65px
+      .separate
+        opacity 0;
+      #logo
+        margin 0;
+        height 80px;
+        width: 75px;
+        background-color: app-light;
+        border-radius: 0 !important;
+      #logo::before
+        display: none;
       li
-        height navbar-height
-        width auto
+        width 55px
+        height 55px
         position relative
-        height 75px
-        line-height: 75px
+        line-height: 65px
+        padding: 7.5px;
+        background-color: app-light;
+        margin: 10px;
+        border-radius: 15px !important;
+        transition: .5s all;
         svg
-          height 50px
           display inline-block !important
-          vertical-align: middle
-          box-shadow: 0 0 5px 2px #eeeeee
-          border-radius: 15px
-          padding: 10px
-          color app-color
+          color white;
+          height 35px;
+        border-radius: 0;
+      li::before
+        content ' '
+        width: 5px;
+        border-radius: 0px 15px 15px 0px;
+        background-color: white
+        position absolute
+        height 55px;
+        top 0
+        left -10px;
+        transform: scale(0)
+        transition: .2s ease-in-out;;
+      li:hover
+        background-color: white;
+      li:hover::before
+        content ' '
+        transform: scale(1)

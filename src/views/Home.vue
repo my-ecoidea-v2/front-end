@@ -1,11 +1,29 @@
 <template>
   <div>
     <Cookies/>
-      <div class="col-sm-2 content">
+      <div class="col-sm-1 content">
       </div>
-      <div class="col-sm-5 content">
-        <div class="page-title">
-          <h1>Fil d'actualité</h1>
+      <div class="col-sm-6 content">
+        <div class="box search">
+          <input id="search-input" name="search-txt" type="text" placeholder="Rechercher">
+          <div id="search-btn"><iconSearch/></div>
+        </div>
+        <div class="box selection" itemscope >
+          <div class="box-user">
+            <img class="picture" alt="My-EcoIdea logo" src="@/assets/images/logo.png">
+            <h2 class="username">Eco Idée du mois</h2>
+          </div>
+          <p class="description">Mon idée est d'améliorer notre éco-quotidien en étant inscrit sur le réseau social my ecoidea</p>
+          <div class="box-actions row">
+            <div class="like action col-xs-4">
+              <iconLike></iconLike>
+              <p>192</p>
+            </div>
+            <div class="action col-xs-4"></div>
+            <div @click='discover("idea_exemple")' class="discover action col-xs-4">
+              <iconLink class="svg"></iconLink>
+            </div>
+          </div>
         </div>
         <div class="box selection" itemscope >
           <div class="box-user">
@@ -56,7 +74,7 @@
             <div class="action col-xs-4"></div>
             <div class="action col-xs-4"></div>
           </div>
-        </div> 
+        </div>
         <div class="box idea" itemscope >
           <div class="box-user">
             <img class="picture" alt="User picture" src="https://pbs.twimg.com/profile_images/1150517248668446721/s4I_f4i2_400x400.jpg">
@@ -88,7 +106,7 @@
               <p itemprop="url">sarquentin.fr<iconLink></iconLink></p>
             </div>
           </div>
-        </div>    
+        </div>
       </div>
       <div class="col-sm-3 content">
         <Account></Account>

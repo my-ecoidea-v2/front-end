@@ -11,6 +11,6 @@ export default {
     iconPublications,
     iconSearch,
     iconFollow,
-    iconAccount,
+    iconAccount
   }
 }

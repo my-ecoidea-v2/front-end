@@ -25,11 +25,6 @@ export default new Router({
       component: Home
     },
     {
-      path: '/recherche',
-      name: 'search',
-      component: () => import('@/views/publications/search/Search.vue')
-    },
-    {
       path: '/mon-compte',
       name: 'account',
       component: () => import('@/views/account/Account.vue')
@@ -48,11 +43,6 @@ export default new Router({
       path: '/publications/creer',
       name: 'publications-create',
       component: () => import('@/views/publications/create/Create.vue')
-    },
-    {
-      path: '/publications/chercher',
-      name: 'publications-search',
-      component: () => import('@/views/publications/search/Search.vue')
     },
     {
       path: '/bienvenue',

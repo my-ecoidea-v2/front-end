@@ -15,4 +15,3 @@
 
 <style lang="stylus" src="./account.styl"></style>
 <script src='./account.js'></script>
-

@@ -1,6 +1,6 @@
 <template>
   <div>
-    <div class="col-md-2"></div>  
+    <div class="col-md-2"></div>
     <div class="col-md-7 content">
       <!-- <div class="box-create row">
         <div class="dropdown col-xs-6">
@@ -18,8 +18,8 @@
           </div>
         </div>
       </div> -->
-    </div>  
-    <div class="col-md-3"></div>  
+    </div>
+    <div class="col-md-3"></div>
   </div>
 </template>
 <style lang="stylus" src="./create.styl"></style>

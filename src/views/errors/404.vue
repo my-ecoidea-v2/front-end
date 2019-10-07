@@ -21,7 +21,7 @@
     box-shadow 0 0 5px 2px #eeeeee
     padding 25px
     border-radius 15px
-    img 
+    img
       height 200px
       display inline-block
     h1
