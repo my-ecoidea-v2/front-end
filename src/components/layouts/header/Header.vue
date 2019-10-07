@@ -11,9 +11,6 @@
         <router-link to='/'><li>
           <iconHome></iconHome>
         </li></router-link>
-        <router-link to="/publications/search"><li>
-          <iconSearch></iconSearch>
-        </li></router-link>
         <router-link id="center" to="/publications/create"><li>
           <iconPublications></iconPublications>
         </li></router-link>
