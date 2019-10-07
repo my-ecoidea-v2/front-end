@@ -1,39 +1,29 @@
 @import "../assets/stylesheets/master.styl"
 
 .content
-  margin-top: 10px
+  margin-top: 80px
   padding: 0
-  padding-left: 15px
-  padding-right: 15px
-
-.page-title
-  background-color: #fefefe
-  padding: 5px
-  width: auto
-  display inline-block
-  border-bottom: 3px solid app-color
-  margin-bottom: 15px
-  h1
-    font-size: 2em
-    font-weight: bold
-    margin: 0
 
 .search
   line-height: 45px
   text-align: center
-  padding-bottom: 10px
+  padding: 0 !important;
+  margin-bottom: 25px;
+  position fixed
+  top: 15px
   #search-input
     height 45px
     display inline-block
     vertical-align: middle
-    padding-left: 10px
-    border: 2px solid #eeeeee
+    border: 2px solid app-color
+    box-sizing: border-box
     border-top-left-radius: 5px
     border-bottom-left-radius: 5px
-    width 80%
+    width calc(((100vw / 12) * 6) - 82px)
+    padding-left: 15px
   #search-btn
     display inline-block
-    border: 2px solid app-color
+    background-color: app-color
     border-top-right-radius: 5px
     border-bottom-right-radius: 5px
     height 45px
@@ -51,7 +41,13 @@
   #search-btn:hover
     svg 
       transform: scale(.8)
-      
+      fill: app-color;
+
+@media screen and (max-width : 768px)
+  .search
+    #search-input
+      width calc(((100vw / 12) * 11) - 45px)
+
 .box
   width: 100%
   padding-left: 15px
