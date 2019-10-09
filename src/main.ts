@@ -11,7 +11,7 @@ new Vue({
   store,
   render: h => h(App),
   mounted: function () {
-    this.isLogin()
+    this.isLogin();
   },
   methods: {
     isLogin: function () {

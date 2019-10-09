@@ -11,59 +11,45 @@
   box-shadow 0 0 2px 3px #e3e3e3
   background-color: #fefefe
   padding-top: 10px
-  .idea-exemple
-    z-index 10
-    overflow-y scroll
-    position fixed
-    top 15px
-    left (100vw / 12 * 4)
-    padding: 15px
-    height (100vh / 4 * 3)
-    border: 2px solid #eeeeee
-    border-radius: 10px
-  svg 
-    position fixed
-    bottom 0
-    left 0
-    width 100vw
-    z-index 100
-  .icon
-    position fixed
-    top calc((100vh / 3) - 100px)
-    left 0
-    width (100vw / 12 * 4)
-    text-align: center
-    line-height: 50px;
-    img 
-      width (100vw / 12 * 2)
-      vertical-align: middle
-  .title
-    position fixed
-    top calc((100vh / 3) - 100px)
-    right 0
-    width (100vw / 12 * 4)
-    text-align: center
-    line-height: 50px;
-    padding: 25px
-    h1
-      color app-color-dark
-      font-size: 2em
-      display: inline-block
-      vertical-align: middle
-      margin 0
-    p
-      color app-color-dark
-      font-size: 1.5em
-      display: inline-block
-      vertical-align: middle
-      margin 0
+  .infos
+    .icon
+      margin-top 75px
+      left 0
+      margin-left: calc(45% - 50px);
+      line-height: 50px;
+      img 
+        width 100px
+        vertical-align: middle
+    .title
+      right 0
+      width: 90%
+      text-align: center
+      line-height: 50px;
+      padding: 25px
+      h1
+        text-align: left
+        color app-color
+        font-size: 3em
+        margin 0
+        font-weight: bold
+        font-family: Arial, Helvetica, sans-serif
+      p
+        font-weight: bold
+        padding-top: 20px
+        white-space: pre-wrap
+        line-height: 1.5em
+        text-align: left
+        color app-color-dark
+        font-size: 1.5em
+        vertical-align: middle
+        margin 0
   .session-box
     z-index 1000
     text-align: center
-    margin-top: 10px
     position fixed
     width 100vw;
     bottom 25px;
+    left 0
     ul 
       padding:0;
       margin:0;
@@ -84,18 +70,44 @@
           font-size: 20px;
           font-family: Arial, Helvetica, sans-serif;
     p
+      margin-top: 5px
       font-size: 1.25em
       color: #fefefe
 
+@media screen and (max-width : 768px)
+  .session
+    .infos
+      .icon
+        margin-left: calc(50% - 50px);
+    .session-box
+      p
+        display none
+
 #login
-  border: 2px solid #eeeeee;
+  border: 2px solid #ffffff;
+  background-color: app-color
   border-radius: 50px;  
-  color #fefefe
+  color #ffffff
   font-size: 1.5em
 
 #register
-  border: 2px solid #fefefe
+  border: 2px solid app-color
   color: app-color;
-  background-color: #fefefe
+  background-color: #ffffff
   font-size: 1.5em
   border-radius: 50px;
+
+.footer
+  position fixed
+  height 30px
+  line-height: 25px
+  width 100vw
+  bottom 0px
+  text-align: center
+
+.demonstrate
+  #publication
+    width: 90%
+    display inline-block
+    vertical-align: middle
+    margin-top: 45px

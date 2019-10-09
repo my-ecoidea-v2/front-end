@@ -1,4 +1,3 @@
-import Account from '@/components/layouts/account/Account.vue'
 import Cookies from '@/components/layouts/cookies/Cookies.vue'
 
 import iconLink from '@/assets/items/Link.svg'
@@ -7,25 +6,22 @@ import iconLike from '@/assets/items/Like.svg'
 import iconFollow from '@/assets/items/Follow.svg'
 import iconSearch from '@/assets/items/Search_W.svg'
 
+import Wave from '@/assets/elem/wave.svg'
+
+import publication from '@/components/composants/Publications.vue'
+
+import Footer from '@/components/layouts/footer/Footer.vue'
+
 export default {
-  name: 'home',
   components: {
     iconLink,
     iconLogo,
     iconLike,
     iconFollow,
     iconSearch,
-    Account,
-    Cookies
+    Cookies,
+    publication: publication,
+    Wave, 
+    Footer
   },
-  methods: {
-    discover: function (div) {
-      console.log('test')
-      $('#' + div).toggle()
-    }
-  }
 }
-
-$(function () {
-  $('[data-toggle="tooltip"]').tooltip()
-})
