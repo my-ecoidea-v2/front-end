@@ -3,11 +3,11 @@
     <div class="menu row col-sm-1 row">
       <ul>
         <li id="logo">
-          <router-link to="/" class="hidden-xs">
+          <router-link to="/">
             <img alt='My-EcoIdea logo' src="@/assets/images/logo_w.png">
             </router-link>
         </li>
-        <li class="separate"></li>
+        <li class="separate hidden-xs"></li>
         <router-link to='/'><li>
           <iconHome></iconHome>
         </li></router-link>

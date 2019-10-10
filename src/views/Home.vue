@@ -1,7 +1,7 @@
 <template>
   <div>
     <Cookies/>
-    <div class="col-sm-1 content">
+    <div class="col-sm-1 content hidden-xs">
     </div>
     <div class="col-sm-6">
       <div class="search">
