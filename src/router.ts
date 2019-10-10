@@ -24,11 +24,11 @@ export default new Router({
       name: 'home',
       component: Home
     },
-    // {
-    //   path: '/mon-compte',
-    //   name: 'account',
-    //   component: () => import('@/views/account/Account.vue')
-    // },
+    {
+      path: '/mon-compte',
+      name: 'account',
+      component: () => import('@/views/account/Account.vue')
+    },
     // {
     //   path: '/mon-compte/connexion',
     //   name: 'login',
@@ -39,11 +39,11 @@ export default new Router({
     //   name: 'register',
     //   component: () => import('@/views/account/register/Register.vue')
     // },
-    // {
-    //   path: '/publications/creer',
-    //   name: 'publications-create',
-    //   component: () => import('@/views/publications/create/Create.vue')
-    // },
+    {
+      path: '/publications/creer',
+      name: 'publications-create',
+      component: () => import('@/views/publications/create/Create.vue')
+    },
     {
       path: '/bienvenue',
       name: 'landing',

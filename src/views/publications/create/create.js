@@ -1,7 +1,9 @@
+import Wave from '@/assets/elem/wave.svg'
+import Footer from '@/components/layouts/footer/Footer.vue'
+
 export default {
-  data: function () {
-    return {
-      current_type: 'Eco Idée'
-    }
+  components: {
+    Wave, 
+    Footer
   }
 }

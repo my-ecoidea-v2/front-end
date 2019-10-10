@@ -11,13 +11,13 @@
         <router-link to='/'><li>
           <iconHome></iconHome>
         </li></router-link>
-        <router-link id="center" to="/publications/create"><li>
+        <router-link id="center" to="/publications/creer"><li>
           <iconPublications></iconPublications>
         </li></router-link>
         <router-link to="/u/favoris"><li>
           <iconFollow></iconFollow>
         </li></router-link>
-        <router-link to="/account"><li>
+        <router-link to="/mon-compte"><li>
           <iconAccount></iconAccount>
         </li></router-link>
       </ul>

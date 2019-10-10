@@ -13,8 +13,23 @@ app-light = #8AD18E;
 #wave-2
   svg
     z-index -1
-    opacity .25
+    opacity .5
     position fixed
     bottom 0
     left 0
     width 100vw
+
+#title
+  font-size: 2.5em
+  font-weight: bold
+  color app-color
+  padding-left 20px
+#title::before
+  content ' '
+  position absolute
+  height 25px
+  width 300px
+  background-color app-light
+  opacity .25
+  margin-top 22.5px
+  margin-left: -10px
