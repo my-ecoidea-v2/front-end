@@ -8,8 +8,8 @@
       <p id="description">{{ description }}</p>
       <div class="interactions">
         <ul>
-          <li class="col-sm-6" id="like"><p><like/>{{ likes }}</p></li>
-          <li class="col-sm-6" id="author"><p id="author">- {{ author }}</p></li>
+          <li class="col-xs-6" id="like"><p><like/>{{ likes }}</p></li>
+          <li class="col-xs-6" id="author"><p id="author">- {{ author }}</p></li>
         </ul>
       </div>
     </div>
