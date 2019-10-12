@@ -1,0 +1,129 @@
+@import '../../../assets/stylesheets/master.styl'
+@import './publications.styl'
+
+.idea
+  .title
+    margin-top: 10px
+    margin-bottom: 15px
+    p
+      font-size: 1.75em !important
+  .resume
+    margin: 10px
+    border-radius: 15px
+    border 5px dotted #eeeeee
+    padding: 15px
+    text-align: justify
+    p 
+      font-family  Arial, Helvetica, sans-serif
+      font-weight: 700
+      font-size: 1.2em
+      text-align: justify
+      color #353533
+      opacity .9
+    p::first-letter
+      font-size: 1.2em
+  .keywords
+    ul 
+      padding:0;
+      margin:0;
+      list-style-type:none;
+      vertical-align: middle;
+      height 30px
+      margin-top: 10px
+      margin-bottom: 10px
+      li 
+        height: 30px
+        margin-left: 25px
+        margin-right: 25px
+        width calc(100% / 3 - 50px)
+        border-radius: 15px
+        text-align: center;
+        line-height:30px
+        position: relative;
+        vertical-align: middle;
+        background-color: app-color
+        color white
+        font-weight: bold
+        font-size: 1.25em
+  .description
+    margin: 10px
+    background-color: rgb(245, 245, 245)
+    border-radius: 15px
+    padding: 15px
+    p 
+      font-family  Arial, Helvetica, sans-serif
+      font-size: 1.1em
+      text-align: justify
+      color #353535
+  .links
+    ul 
+      padding:0;
+      margin:0;
+      margin-left: 10px
+      margin-right: 10px
+      list-style-type:none;
+      vertical-align: middle;
+      height 30px
+      margin-top: 10px
+      margin-bottom: 10px
+      li 
+        height: 30px
+        border-radius: 15px
+        text-align: left;
+        line-height:30px
+        position: relative;
+        vertical-align: middle;
+        color white
+        font-size: 1em
+        text-decoration: underline
+  .interact
+    padding-left: 10px
+    padding-right: 10px
+    padding-bottom: 10px
+    ul 
+      padding:0;
+      margin:0;
+      list-style-type:none;
+      vertical-align: middle;
+      height 25px
+      li 
+        height: 25px
+        text-align: center;
+        line-height:25px
+        box-sizing: border-box;
+        position: relative;
+        vertical-align: middle;
+        text-align: left
+        svg 
+          height 25px
+          vertical-align: middle
+          margin-right: 5px
+      #like
+        color red
+        fill red
+      #author
+        text-align: right 
+        color app-color
+        font-size: 1em
+
+.footer
+  position fixed
+  height 30px
+  line-height: 25px
+  width 100vw
+  bottom 0px
+  text-align: center
+
+@media screen and (max-width : 768px)
+  .idea
+    .keywords
+      ul
+        li
+          margin-left 5px
+          margin-right 5px
+          width calc(100% / 3 - 20px)
+          font-size: 1em
+        li:first-child
+          margin-left: 20px
+        li:last-child
+          margin-right: 20px

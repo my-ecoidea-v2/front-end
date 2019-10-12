@@ -24,7 +24,5 @@ export default {
       type: String,
       default: '[Author]'
     },
-  },
-  methods: {
   }
 }

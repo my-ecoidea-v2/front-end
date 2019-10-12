@@ -60,7 +60,7 @@
           <span>publications</span></p><p class="numbers">1273
             <span>utilisateurs</span></p>
       </div> -->
-      <div id="logo"><img src="@/assets/images/logo.png"/></div>
+      <div id="logo"><img alt="My-EcoIdea Logo opacité réduite" src="@/assets/images/logo.png"/></div>
       <div class="footer"><Footer/></div>
     </div>
     <div id="wave-2"><Wave/></div>

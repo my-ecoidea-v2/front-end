@@ -1,9 +1,15 @@
 import router from '@/router'
 import store from '@/store'
+import Wave from '@/assets/elem/wave.svg'
+import Footer from '@/components/layouts/footer/Footer.vue'
 
 export default {
   store: store,
   router: router,
+  components: {
+    Wave,
+    Footer
+  },
   data: function () {
     return {
       email: '',
