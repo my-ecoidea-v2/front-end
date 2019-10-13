@@ -22,9 +22,6 @@
     </div>
     <div class="col-sm-4 col-xs-12 login">
       <div class="hidden-lg hidden-sm hidden-md infos-mobile">
-        <div class="icon">
-          <img src="@/assets/images/logo.png" alt="My-EcoIdea logo" class="img-rounded">
-        </div>
         <div class="inscription-title">
           <p id="inscription-title">Inscription</p>
         </div>
@@ -39,7 +36,9 @@
           <label>Mon mot de passe :
           <input v-model="password" id="password" type="password" name="password" placeholder="ex : monmdp"/></label>
           <label>Confirmer mon mot de passe
-          <input v-model="passwordconfirmation" id="password-confirmation" type="password" name="password" placeholder="ex : monmdp"/></label>
+          <input v-model="password_confirmation" id="password_confirmation" type="password" name="password_confirmation" placeholder="ex : monmdp"/></label>
+          <label>Code bêta (optionnel)
+          <input v-model="code" id="code" type="code" name="code" placeholder="ex : MYE-000-COD"/></label>
           <div id="question">
             <router-link to='/mon-compte/connexion'>Déjà un compte ?</router-link>
           </div>

@@ -19,7 +19,19 @@ export default {
   },
   methods: {
     validated: function () {
-      fetch('http://account.api.my-ecoidea.org/api/login', {
+      if (this.email == '')
+      {
+        $('#email').addClass('error')
+        this.error = 'Email vide'
+        return;
+      } else { $('#email').removeClass('error') }
+      if (this.password == '')
+      {
+        $('#password').addClass('error')
+        this.error = 'Mot de passe vide'
+        return;
+      } else { $('#password').removeClass('error') }
+      fetch('http://api.my-ecoidea.org/api/user/login', {
         method: 'post',
         credentials: 'same-origin',
         headers: {
@@ -31,34 +43,15 @@ export default {
       })
         .then(response => { return response.text() })
         .then((data) => {
-          $('#email').removeClass('error')
-          $('#password').removeClass('error')
           if (Object.keys(JSON.parse(data)).includes('error')) {
-            $('#email').addClass('error')
-            $('#password').addClass('error')
-            this.error = JSON.parse(data)['error']
-          }
-          if (Object.keys(JSON.parse(data)).includes('token')) {
-            $('#email').addClass('valid')
-            $('#password').addClass('valid')
-            localStorage.user_token = JSON.parse(data)['token']
-            router.push('/')
+            if (JSON.parse(data)['error'] == 'invalid_key')
+            {
+              this.error = 'Clés bêta non valide !'
+            }
+          } else {
+            localStorage.token = JSON.parse(data)['token']
             store.commit('setLogin')
-            fetch('http://account.api.my-ecoidea.org/api/user', {
-              method: 'get',
-              credentials: 'same-origin',
-              headers: {
-                'Accept': 'application/json, text/plain, */*',
-                'Content-Type': 'application/json',
-                'cache-control': 'no-cache',
-                'Authorization': 'Bearer ' + localStorage.user_token
-              }
-            })
-              .then(response => { return response.text() })
-              .then((data) => {
-                localStorage.user_email = JSON.parse(data)['user']['email']
-                localStorage.user_name = JSON.parse(data)['user']['name']
-              })
+            router.push({path: '/'})
           }
         })
     }
