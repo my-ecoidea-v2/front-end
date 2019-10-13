@@ -34,11 +34,11 @@ export default new Router({
       name: 'login',
       component: () => import('@/views/account/login/Login.vue')
     },
-    // {
-    //   path: '/mon-compte/inscription',
-    //   name: 'register',
-    //   component: () => import('@/views/account/register/Register.vue')
-    // },
+    {
+      path: '/mon-compte/inscription',
+      name: 'register',
+      component: () => import('@/views/account/register/Register.vue')
+    },
     {
       path: '/publications/creer',
       name: 'publications-create',

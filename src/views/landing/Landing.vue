@@ -17,8 +17,8 @@
     <div class="session-box">
         <ul>
           <li class="col-sm-3 hidden-xs"></li>
-          <router-link to="account/login"><li class="col-sm-3 col-xs-6" ><div id="login">Connexion</div></li></router-link>
-          <router-link to="account/register"><li class="col-sm-3 col-xs-6" ><div id="register">Inscription</div></li></router-link>
+          <router-link to="/mon-compte/connexion"><li class="col-sm-3 col-xs-6" ><div id="login">Connexion</div></li></router-link>
+          <router-link to="/mon-compte/inscription"><li class="col-sm-3 col-xs-6" ><div id="register">Inscription</div></li></router-link>
           <li class="col-sm-3 hidden-xs"></li>
         </ul>
         <p class="hidden-xs hidden-sm">Connectez-vous pour avoir accès au contenu</p>

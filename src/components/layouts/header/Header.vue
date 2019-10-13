@@ -14,7 +14,7 @@
         <router-link id="center" to="/publications/creer"><li>
           <iconPublications></iconPublications>
         </li></router-link>
-        <router-link to="/u/favoris"><li>
+        <router-link to="/mon-compte/favoris"><li>
           <iconFollow></iconFollow>
         </li></router-link>
         <router-link to="/mon-compte"><li>
