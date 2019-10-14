@@ -54,8 +54,8 @@
               position:absolute;
               top:-20px;
             input:checked + span
-              color app-color
-              background-color: rgba(0, 250, 20, .25)
+              background-color: app-color
+              color white
   .type-1
     .inbox
       min-height 100px
@@ -103,3 +103,14 @@
       box-shadow: 0 0 10px rgba(0,0,0,.1)
       color app-color
       font-weight: bold
+
+.error 
+  border 3px dotted red !important
+
+#error
+  color red
+  font-weight: bold
+  padding: 5px
+  text-decoration: underline
+  border-radius: 15px
+  padding-left: 15px

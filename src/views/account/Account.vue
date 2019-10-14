@@ -8,9 +8,9 @@
       </div>
       <div class="box profil">
           <img class="picture" alt="User" src="@/assets/images/logo.png">
-          <h3 class="user-name">Quentin Sar</h3>
+          <h3 class="user-name">{{ name }}</h3>
           <div class="user-info">
-              <span class="nb-ideas">2 publications</span>
+              <span class="nb-ideas">{{ publicationsCount }} publications</span>
           </div>
           <div class="account-logout" @click='logout'>déconnexion</div>
       </div>

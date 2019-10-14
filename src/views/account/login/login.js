@@ -48,6 +48,15 @@ export default {
             {
               this.error = 'Clés bêta non valide !'
             }
+            if (JSON.parse(data)['error'] == 'invalid_email_or_password')
+            {
+              this.error = 'Utilisateur ou mot de passe invalide'
+              $('#email').addClass('error');
+              $('#password').addClass('error');
+            } else {
+              $('#email').removeClass('error');
+              $('#password').removeClass('error');
+            }
           } else {
             localStorage.token = JSON.parse(data)['token']
             store.commit('setLogin')
