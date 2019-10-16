@@ -1,171 +1,117 @@
 @import "../assets/stylesheets/master.styl"
 
 .content
-  margin-top: 10px
-  padding: 0
-  padding-left: 15px
-  padding-right: 15px
+  margin-top: 80px !important
 
-.page-title
-  background-color: #fefefe
-  padding: 5px
-  width: auto
-  display inline-block
-  border-bottom: 3px solid app-color
-  margin-bottom: 15px
-  h1
-    font-size: 2em
-    font-weight: bold
-    margin: 0
+#wave
+  svg
+    position fixed
+    bottom 0
+    left 0
+    width: 100vw
+    z-index: -1
+    opacity .75
 
-
-.box
-  width: 100%
-  padding-left: 15px
-  padding-right: 15px
-  padding-top: 10px
-  margin-bottom: 15px;
-  border-radius: 20px;
-  box-shadow: 0 0 5px 2px #eeeeee;
-  .box-user
-    height 40px
-    margin-bottom: 5px
-    line-height: 35px
-    text-align: left
-    .picture
-      height 30px
-      border-radius: 50%
-    .username
-      display inline
-      vertical-align: middle
-      font-size: 1em
-      font-weight: bold
-      border-radius: 10px
-      padding: 5px
-      padding-left: 10px
-  .box-actions
-    margin-top: 5px
+.search
+  line-height: 45px
+  text-align: center
+  padding: 0 !important;
+  margin-bottom: 25px;
+  position fixed
+  top: 15px
+  z-index 2
+  #search-input
     height 45px
-    line-height: 45px
-    .action
-      text-align: center
-      border-left: 1px solid #eeeeee
-      border-right: 1px solid #eeeeee
-      box-sizing: border-box
-      height 45px
-    .action:first-child
-      border-left : 0
-    .action:last-child
-      border-right : 0
-    .like
-      display inline
-      cursor pointer
-      svg 
-        height 25px
-        color: app-color-dark
-        vertical-align: middle
-        display inline-block
-      p
-        display inline
-        margin-left: 2.5px
-        color: app-color-dark
-        font-weight: bold
-    .follow
-      display inline
-      cursor pointer
-      svg 
-        height 25px
-        color: app-color-dark
-        vertical-align: middle
-        display inline-block
-      p
-        display inline
-        margin-left: 2.5px
-        color: app-color-dark
-        font-weight: bold
-    .discover
-      display inline-block
-      cursor pointer
-      svg 
-        height 25px
-        vertical-align: middle
-        display inline-block
-        color: app-color
-      p
-        display inline-block
-        margin-left: 2.5px
-        color: app-color
-        font-weight: bold
-
-.slogan
-  .type
-    color app-color
-    font-weight: bold
-    display inline
-  .text
-    font-size: 1em
-    display inline
-
-.idea
-  .keyword
-    font-size: 1em
-    display inline
-    margin-right: 5px
-    background-color: app-color
-    padding: 2.5px
-    padding-left: 5px
-    padding-right: 5px
-    border-radius: 5px
-    color #fefefe
-  .categories
-    float right
+    display inline-block
+    vertical-align: middle
+    border: 2px solid app-color
     box-sizing: border-box
-    color: app-color
-    font-weight: bold
-    display inline
+    border-top-left-radius: 5px
+    border-bottom-left-radius: 5px
+    width calc(((100vw / 12) * 6) - 82px)
+    padding-left: 15px
+    background-color: white
+  #search-btn
+    display inline-block
+    background-color: app-color
+    border-top-right-radius: 5px
+    border-bottom-right-radius: 5px
+    height 45px
+    width 45px
+    line-height: 50px
+    vertical-align: middle
+    cursor pointer
+    position relative
     svg 
-      height 15px
-      display inline
-      vertical-align: middle
-  .description
-    font-size: 1em
-    text-align: justify
-    margin-top: 5px
-  .box-idea-details
-    display: none
-    padding-bottom: 25px
-    .title
-      border-top: 2px solid #eeeeee
-      padding-top: 5px
-      font-size: 1.5em
-      font-weight: bold
-    .text
-      font-size: 1em
-      text-align: justify
-    .links
-      margin-top: 10px
-      line-height: 10px
-      p
-        color .63a4ff
-        svg 
-          height 10px
-          margin-left: 5px
-    .images
-      margin-top: 5px
-      img 
-        border: 2px solid app-color-dark
-        border-radius: 5px
-        margin: 5px
-        height 100px
-        padding: 0
+      height: 30px
+      position relative
+      display inline-block
+      line-height 50px
+      margin: 5.5px
+  #search-btn:hover
+    svg 
+      transform: scale(.8)
+      fill: app-color;
 
-.selection
-  width auto
-  padding-top: 10px
-  .type
-    text-align: center
-    font-size: 1.2em
-    font-weight: bold
-    color: app-color-dark
+.stats
+  height 100vh
+  position fixed
+  right 0
+  text-align: center
+  .items
+    height 100px
+    padding-top: 25px
+    padding-bottom: 25px
+    ul 
+      padding:0;
+      margin:0;
+      list-style-type:none;
+      vertical-align: middle;
+      text-align: center
+      height 50px
+      li 
+        display inline-block
+        height: 50px
+        width: 50px
+        text-align: center;
+        line-height: 50px
+        box-sizing: border-box;
+        vertical-align: middle;
+        border: 4px solid app-color
+        border-radius: 15px
+        background-color: white
+        margin-left: 20px
+        margin-right: 20px
+        cursor pointer
+  .stats-content
+    .numbers
+      display: inline-block
+      font-size: 4em
+      color app-color
+      font-weight: bold
+      text-align: center
+      white-space pre-line
+      line-height: 30px
+      margin: 30px
+      span 
+        font-size: 0.5em
+        font-weight: normal
+  #logo
     img 
-      height 1.5em
+      position absolute
+      opacity .1
+      width 350px
+      top: 50px
+      left calc(50% - 175px)
+      z-index: -1
+  .footer
+    position absolute
+    bottom 25px;
+    right 0
+    height 50px
+    width 350px
+
+@media screen and (max-width : 768px)
+  .search
+    #search-input
+      width calc(((100vw / 12) * 11) - 45px)

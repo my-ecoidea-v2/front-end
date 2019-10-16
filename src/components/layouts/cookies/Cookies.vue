@@ -23,97 +23,97 @@
 </template>
 <style lang="stylus" src="./cookies.styl"></style>
 <script>
-  export default {
-    name: 'CookieConsent',
-    props: {
-      transition: {
-        type: String,
-        default: 'cookie-consent-transition'
-      },
-      message: {
-        type: String,
-        default: 'Afin d\'améliorer votre expérience de navigation, le  site my-ecoidea utilise des cookies. Pour en savoir plus, lisez notres'
-      },
-      linkLabel: {
-        type: String,
-        default: 'politique de cookies'
-      },
-      buttonLabel: {
-        type: String,
-        default: 'D\'accord !'
-      },
-      href: {
-        type: String,
-        default: 'http://cookiesandyou.com'
-      },
-      target: {
-        type: String,
-        default: '_blank'
-      },
-      rel: {
-        type: String,
-        default: 'noopener'
-      },
-      // cookie
-      cookieName: {
-        type: String,
-        default: 'cookieconsent_status'
-      },
-      cookiePath: {
-        type: String,
-        default: '/'
-      },
-      cookieDomain: {
-        type: String,
-        default: ''
-      },
-      cookieExpiryDays: {
-        type: Number,
-        default: 365
-      }
+export default {
+  name: 'CookieConsent',
+  props: {
+    transition: {
+      type: String,
+      default: 'cookie-consent-transition'
     },
-    data() {
-      return {
-        show: undefined
-      }
+    message: {
+      type: String,
+      default: 'Afin d\'améliorer votre expérience de navigation, le  site my-ecoidea utilise des cookies. Pour en savoir plus, lisez notres'
     },
-    computed: {
-      cookie() {
-        return !this.getCookie(this.cookieName)
-      }
+    linkLabel: {
+      type: String,
+      default: 'politique de cookies'
     },
-    beforeMount() {
-      this.show = this.cookie
+    buttonLabel: {
+      type: String,
+      default: 'D\'accord !'
     },
-    methods: {
-      dismiss() {
-        this.show = false
-        this.setCookie(this.cookieName, 1, this.cookieExpiryDays, this.cookieDomain, this.cookiePath)
-      },
-      getCookie(name) {
-        const value = `; ${document.cookie}`
-        const parts = value.split(`; ${name}=`)
+    href: {
+      type: String,
+      default: 'http://cookiesandyou.com'
+    },
+    target: {
+      type: String,
+      default: '_blank'
+    },
+    rel: {
+      type: String,
+      default: 'noopener'
+    },
+    // cookie
+    cookieName: {
+      type: String,
+      default: 'cookieconsent_status'
+    },
+    cookiePath: {
+      type: String,
+      default: '/'
+    },
+    cookieDomain: {
+      type: String,
+      default: ''
+    },
+    cookieExpiryDays: {
+      type: Number,
+      default: 365
+    }
+  },
+  data () {
+    return {
+      show: undefined
+    }
+  },
+  computed: {
+    cookie () {
+      return !this.getCookie(this.cookieName)
+    }
+  },
+  beforeMount () {
+    this.show = this.cookie
+  },
+  methods: {
+    dismiss () {
+      this.show = false
+      this.setCookie(this.cookieName, 1, this.cookieExpiryDays, this.cookieDomain, this.cookiePath)
+    },
+    getCookie (name) {
+      const value = `; ${document.cookie}`
+      const parts = value.split(`; ${name}=`)
 
-        return parts.length !== 2 ?
-          undefined :
-          parts.pop().split(';').shift()
-      },
-      setCookie(name, value, expiryDays, domain, path) {
-        const exdate = new Date()
-        exdate.setDate(exdate.getDate() + (expiryDays || 365))
+      return parts.length !== 2
+        ? undefined
+        : parts.pop().split(';').shift()
+    },
+    setCookie (name, value, expiryDays, domain, path) {
+      const exdate = new Date()
+      exdate.setDate(exdate.getDate() + (expiryDays || 365))
 
-        const cookie = [
-          `${name}=${value}`,
-          `expires=${exdate.toUTCString()}`,
-          `path=${(path || '/')}`
-        ]
+      const cookie = [
+        `${name}=${value}`,
+        `expires=${exdate.toUTCString()}`,
+        `path=${(path || '/')}`
+      ]
 
-        if (domain) {
-          cookie.push(`domain=${domain}`)
-        }
-
-        document.cookie = cookie.join(';')
+      if (domain) {
+        cookie.push(`domain=${domain}`)
       }
+
+      document.cookie = cookie.join(';')
     }
   }
+}
 </script>

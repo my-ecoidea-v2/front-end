@@ -1,7 +1,6 @@
 <template>
   <div id="app">
     <Header></Header>
-    <div class="spacer-header"></div>
     <router-view/>
   </div>
 </template>
@@ -16,16 +15,3 @@ export default {
   }
 }
 </script>
-
-<style lang="stylus">
-  @import "./components/layouts/header/header.styl"
-
-  .spacer-header
-    position relative
-    height 0
-
-  @media screen and (max-width: 768px)
-    .spacer-header
-      height ( navbar-height)
-
-</style>

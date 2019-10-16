@@ -1,0 +1,114 @@
+@import "../../assets/stylesheets/master.styl"
+@import "../home.styl"
+
+.session
+  z-index 100
+  position fixed
+  top 0
+  left 0
+  width 100%
+  height 100vh
+  box-shadow 0 0 2px 3px #e3e3e3
+  background-color: #fefefe
+  padding-top: 10px
+  .infos
+    .icon
+      margin-top 10%
+      left 0
+      margin-left: calc(45% - 50px);
+      line-height: 50px;
+      img 
+        width 125px
+        vertical-align: middle
+    .title
+      right 0
+      width: 90%
+      text-align: center
+      line-height: 50px;
+      padding: 25px
+      h1
+        text-align: left
+        color app-color
+        font-size: 3em
+        margin 0
+        font-weight: bold
+        font-family: Arial, Helvetica, sans-serif
+      p
+        font-weight: bold
+        padding-top: 20px
+        white-space: pre-wrap
+        line-height: 1.5em
+        text-align: left
+        color app-color-dark
+        font-size: 1.5em
+        vertical-align: middle
+        margin 0
+  .session-box
+    z-index 1000
+    text-align: center
+    position fixed
+    width 100vw;
+    bottom 25px;
+    left 0
+    ul 
+      padding:0;
+      margin:0;
+      list-style-type:none;
+      vertical-align: middle;
+      height 75px
+      li 
+        height: 50px
+        margin-top: 10px;
+        text-align: center;
+        line-height:50px
+        box-sizing: border-box;
+        position: relative;
+        vertical-align: middle;
+        a
+          text-decoration:none;
+          color: app-color
+          font-size: 20px;
+          font-family: Arial, Helvetica, sans-serif;
+    p
+      margin-top: 5px
+      font-size: 1.25em
+      color: #fefefe
+
+@media screen and (max-width : 768px)
+  .session
+    .infos
+      .icon
+        margin-top: 15px
+        margin-left: calc(50% - 50px);
+    .session-box
+      p
+        display none
+
+#login
+  border: 2px solid #ffffff;
+  background-color: app-color
+  border-radius: 50px;  
+  color #ffffff
+  font-size: 1.5em
+
+#register
+  border: 2px solid app-color
+  color: app-color;
+  background-color: #ffffff
+  font-size: 1.5em
+  border-radius: 50px;
+
+.footer
+  position fixed
+  height 30px
+  line-height: 25px
+  width 100vw
+  bottom 0px
+  text-align: center
+
+.demonstrate
+  #publication
+    width: 90%
+    display inline-block
+    vertical-align: middle
+    margin-top: 45px

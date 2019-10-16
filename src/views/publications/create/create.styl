@@ -1,74 +1,116 @@
 @import "../../../assets/stylesheets/master.styl"
 
-.box-create
-  margin 0
-  margin-top: 35px
-  padding: 35px
-  width: 100%
+.footer
+  position fixed
+  height 30px
+  line-height: 25px
+  width 100vw
+  bottom 0px
   text-align: center
-  background-color: #fefefe
-  box-shadow: 0px 0px 5px 2px #eeeeee
-  .dropdown
-    text-align: left
-    padding: 0
-    .dropdown-toggle::after 
-      display: inline-block;
-      width: 0;
-      height: 0;
-      margin-left: 0;
-      vertical-align: middle;
-      content: "";
-      border-top: .3em solid;
-      border-right: .3em solid transparent;
-      border-bottom: 0;
-      border-left: .3em solid transparent;
-    #dropdownMenuButton
-      box-shadow: 2px 2px 5px 2px #eeeeee
-      height 35px
-      padding: 0
-      padding-right: 35px 
-      border-radius: 5px
-      background-color: #fefefe
-      font-family: Arial, Helvetica, sans-serif
-      border: none
-      #type-text
-        display inline-block
-        background-color: app-color
-        margin: 0
-        height 35px
-        border-top-left-radius: 5px
-        border-bottom-left-radius: 5px
-        padding: 10px
-        line-height: 15px
-        color: #fefefe
+
+.post
+  .defaut
+    .inbox
+      min-height 100px
+      .title
+        color app-color
         font-weight: bold
-      #type
-        display inline-block
-        margin: 0
-        height 35px
-        border-top-right-radius: 5px
-        border-bottom-right-radius: 5px
-        padding: 10px
-        line-height: 15px
-        color: app-color-dark
-        font-weight: bold
-        box-sizing: border-box
-    .dropdown-menu
-      ul
-        padding 0
         margin 0
-        list-style-type none
-        li
-          height 35px
-          width 100%
-          position relative
-          text-align: center
-          line-height: 35px
-          border-radius: 5px
-        li:hover
-          background-color: #eeeeee
-        .active
-          background-color: app-color
-          color: #fefefe
-        .active:hover
-          background-color: #A2E58B
+        margin-left: 5px
+      input 
+        width 95%
+      ul 
+        border-top: 2px solid app-color
+        padding:0;
+        margin:0;
+        list-style-type:none;
+        vertical-align: middle;
+        height 25px
+        li:first-child
+          margin-left 0
+        li 
+          height: 35px
+          text-align: center;
+          line-height:30px
+          box-sizing: border-box;
+          position: relative;
+          vertical-align: middle;
+          margin:5px;
+          background-color:#ffffff;
+          color rgba(0,0,0 .4)
+          box-shadow: 0 0 10px rgba(0,0,0,.1)
+          border-radius:15px;
+          width: 100px;
+          overflow:hidden;
+          float left
+          label 
+            width: 100px
+            span
+              text-align:center;
+              padding:3px 0px;
+              display:block;
+              border-radius:4px;
+            input
+              position:absolute;
+              top:-20px;
+            input:checked + span
+              background-color: app-color
+              color white
+  .type-1
+    .inbox
+      min-height 100px
+      .title
+        color app-color
+        font-weight: bold
+        margin 0
+        margin-left: 5px
+      textarea  
+        width 95%
+        border none 
+        box-shadow: 0 0 10px rgba(0,0,0,.1)
+        padding: 10px
+        border-radius: 15px
+        vertical-align: top
+      #resume
+        height 75px
+      #description
+        height 175px
+  .type-2
+    .inbox
+      min-height 100px
+      .title
+        color app-color
+        font-weight: bold
+        margin 0
+        margin-left: 5px
+      input  
+        width 95%
+        border none 
+        box-shadow: 0 0 5px rgba(0,0,0,.1)
+        padding: 10px
+        border-radius: 15px
+        vertical-align: top
+        height 30px;
+        width: 90%
+        margin: 4px
+  .send
+    margin-top: 25px
+    text-align: center
+    .btn
+      width: 250px
+      display inline-block
+      background-color: white
+      box-shadow: 0 0 10px rgba(0,0,0,.1)
+      color app-color
+      font-weight: bold
+
+.error 
+  border 3px dotted red !important
+
+#error
+  color red
+  font-weight: bold
+  padding: 5px
+  text-decoration: underline
+  border-radius: 15px
+  padding-left: 15px

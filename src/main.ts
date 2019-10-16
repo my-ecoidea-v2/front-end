@@ -14,30 +14,28 @@ new Vue({
     this.isLogin();
   },
   methods: {
-    isLogin: function() {
-      if(localStorage.user_token != null)
-      {
-        fetch('http://account.api.my-ecoidea.org/api/user', {
+    isLogin: function () {
+      if (localStorage.token != null) {
+        fetch('http://api.my-ecoidea.org/api/user/get', {
           method: 'get',
-          credentials: "same-origin",
+          credentials: 'same-origin',
           headers: {
             'Accept': 'application/json, text/plain, */*',
             'Content-Type': 'application/json',
-            "cache-control": "no-cache",
-            'Authorization': 'Bearer '+localStorage.user_token, 
+            'cache-control': 'no-cache',
+            'Authorization': 'Bearer ' + localStorage.token
           }
         })
-        .then(response => {return response.text()})
-        .then((data) => {
-          console.log(data)
-          if (Object.keys(JSON.parse(data)).includes("status"))
-          {
-            localStorage.clear();
-            store.commit('logout')
-            return;
-          }
-        });
-        store.commit('setLogin')
+          .then(response => { return response.text() })
+          .then((data) => {
+            if (Object.keys(JSON.parse(data)).includes('status')) {
+              localStorage.clear()
+              store.commit('logout')
+            } else 
+            {
+              store.commit('setLogin')
+            }
+          })
       }
     }
   }

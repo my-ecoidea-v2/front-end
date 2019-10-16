@@ -1,18 +1,40 @@
 <template>
-  <div v-if="$store.getters.isLogin" class='account-page col-md-12'>
-    <div class="account-menu">
-      <ul>
-        <li>
-    <div class="account-user">
-      <img class="picture" alt="User picture" src="@/assets/images/logo.png"><p id="name">{{ user_name }}</p></div></li>
-        <li class="items">Mes publications</li>
-        <li class="items">Mes Adhésions</li>
-      </ul>
+  <div>
+    <div class="col-sm-1 content hidden-xs">
     </div>
-    <div class="account-logout" @click='logout'>déconnexion</div>
+    <div class="col-sm-10">
+      <div class="title">
+        <p id="title">Mon profil</p>
+      </div>
+      <div class="box profil">
+          <img class="picture" alt="User" src="@/assets/images/logo.png">
+          <h3 class="user-name">{{ name }}</h3>
+          <div class="user-info">
+              <span class="nb-ideas">{{ publicationsCount }} publications</span>
+          </div>
+          <div class="account-logout" @click='logout'>déconnexion</div>
+      </div>
+      <div class="user-selection">
+        <div class="item selected" data-section="user-publications">Publications</div>
+        <div class="item" data-section="user-projects">Projets</div>
+        <div class="item" data-section="user-favorites">Favoris</div>
+      </div>
+      <section class="section user-publications" selected>
+      </section>
+      <section class="section user-projects">
+        <center style="margin-top: 60px">
+          <h4>La création de projets sera bientôt disponible</h4>
+          <h5><a href="/">Découvrir</a></h5>
+        </center>
+      </section>
+      <section class="section user-favorites">
+        <center style="margin-top: 60px">
+          <h4>Vous n'avez aucun favoris</h4>
+          <h5><a href="/">Découvrir</a></h5>
+        </center>
+      </section>
+    </div>
   </div>
 </template>
-
 <style lang="stylus" src="./account.styl"></style>
-<script src='./account.js'></script>
-
+<script src="./account.js"></script>
