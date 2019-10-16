@@ -66,9 +66,8 @@ export default {
         console.log(data)
         if (Object.keys(JSON.parse(data)).includes('error')) {
           this.error = JSON.parse(data)['error']
-          $('#' + JSON.parse(data)['field']).addClass('error')
         } else if (Object.keys(JSON.parse(data)).includes('token')) {
-          router.push({path: '/publications/success'})
+          // router.push({path: '/publications/success'})
         }
       })
       }

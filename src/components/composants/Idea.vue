@@ -27,7 +27,7 @@
           <div class="links row">
             <ul>
               <li v-for="link in links" v-bind:key="link.id" class="col-xs-4 link">
-                <a :href="link"><p>Lien » {{link}}</p></a>
+                <a :href="link" target="_blank"><p>Lien » {{link}}</p></a>
               </li>
             </ul>
           </div>

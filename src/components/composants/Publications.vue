@@ -1,5 +1,5 @@
 <template>
-  <div class="box idea" id="publication" itemscope >
+  <div class="box idea" id="publication" itemscope @click="open">
     <div class="title">
       <div id="fav"><fav/></div>
       <p id="type">{{ type }}</p>

@@ -8,15 +8,15 @@
           <div class="inbox">
             <p class="title">Quel type de publication ?</p>
             <ul>
-              <li><label><input type="radio" name="type" value="1" checked @click='typeChange'><span>Eco-Idée</span></label></li>
-              <li><label><input type="radio" name="type" value="2" @click='typeChange'><span>Eco-Slogan</span></label></li>
+              <li><label><input v-on:keyup.enter="validated" type="radio" name="type" value="1" checked @click='typeChange'><span>Eco-Idée</span></label></li>
+              <li><label><input v-on:keyup.enter="validated" type="radio" name="type" value="2" @click='typeChange'><span>Eco-Slogan</span></label></li>
             </ul>
           </div>
           <div class="inbox">
             <p class="title">Voulez-vous être anonyme ?</p>
             <ul>
-              <li><label><input type="radio" name="anonyme" value="false" checked><span>Non</span></label></li>
-              <li><label><input type="radio" name="anonyme" value="true"><span>Oui</span></label></li>
+              <li><label><input v-on:keyup.enter="validated" type="radio" name="anonyme" value="0" checked><span>Non</span></label></li>
+              <li><label><input v-on:keyup.enter="validated" type="radio" name="anonyme" value="1"><span>Oui</span></label></li>
             </ul>
           </div>
         </div>
@@ -43,15 +43,15 @@
           <div class="type-2 col-sm-4">
             <div class="inbox">
               <p class="title">3 Mots résumants votre idée</p>
-              <input v-model="keyword_1" class="keyword" id="keyword_1" placeholder="ex : Quotidien">
-              <input v-model="keyword_2" class="keyword" id="keyword_2">
-              <input v-model="keyword_3" class="keyword" id="keyword_3">
+              <input v-on:keyup.enter="validated" v-model="keyword_1" class="keyword" id="keyword_1" placeholder="ex : Quotidien">
+              <input v-on:keyup.enter="validated" v-model="keyword_2" class="keyword" id="keyword_2">
+              <input v-on:keyup.enter="validated" v-model="keyword_3" class="keyword" id="keyword_3">
             </div>
             <div class="inbox">
               <p class="title">Ajouter des liens (optionel)</p>
-              <input v-model="link_1" class="link" id="link_1" placeholder="ex : my-ecoide.org">
-              <input v-model="link_2" class="link" id="link_2">
-              <input v-model="link_3" class="link" id="link_3">
+              <input v-on:keyup.enter="validated" v-model="link_1" class="link" id="link_1" placeholder="ex : my-ecoide.org">
+              <input v-on:keyup.enter="validated" v-model="link_2" class="link" id="link_2">
+              <input v-on:keyup.enter="validated" v-model="link_3" class="link" id="link_3">
             </div>
           </div>
         </div>

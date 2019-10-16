@@ -17,12 +17,12 @@ export default {
   },
   data: function () {
     return {
-      resume: 'Ne pas laisser nos chargeurs sur la prise une fois que nous ne les utilisons plus pour économiser l\'énergie',
-      keywords: ['Ecologie', 'Quotidien', '#LifeStyle'],
-      description: 'Envisageons le pire scénario (par ailleurs complètement surréaliste) : supposons que ces six chargeurs restent branchés 24 heures sur 24, 7 jours sur 7 pendant un an, soit 8760 heures. Résultat, ces six produits ont dégagé ensemble 0,3 watts. Ce n’est pas énorme, certes, mais il y a bien une consommation d’énergie lorsqu’un chargeur reste branché, même si cette consommation est infime. On atteindrait alors une consommation annuelle de 2,628 kWh. Ainsi, ce n\'est pas un grosse perte énergétique (même s\'il elle doit tout de même être prise en compte) ni une dépense extravagante (de l\'ordre de 50 centimes), mais cela endommage le chargeur qui par la suite consommera plus et pourra endommager la batterie de vos appareil\. Et entre nous, ça ne mange pas de pain que de le débrancher quand on s\'en sert pas.',
-      links: ['my-ecoidea.org','my-ecoidea.org','my-ecoidea.org'],
-      author: 'My-EcoIdea',
-      likes: 2983
+      resume: '',
+      keywords: '',
+      description: '',
+      links: '',
+      author: '',
+      likes: 0,
     }
   },
   props: {
@@ -30,5 +30,48 @@ export default {
       type: String,
       default: '[token]',
     },
+  },
+  mounted: function () {
+    this.getPublication();
+  },
+  methods: {
+    getPublication: function () {
+      fetch('http://api.my-ecoidea.org/api/publication/get', {
+        method: 'post',
+        credentials: 'same-origin',
+        headers: {
+          'Accept': 'application/json, text/plain, */*',
+          'Content-Type': 'application/json',
+          'cache-control': 'no-cache',
+          'Authorization': 'Bearer ' + localStorage.token
+        },
+        body: JSON.stringify({ token: this.token })
+      })
+      .then(response => { return response.text() })
+      .then((data) => {
+        const publication = JSON.parse(data)['publication']
+
+        this.resume = publication.content.description
+        this.description = publication.content.texte
+        
+        let keyarray = [];
+        publication.content.keywords.forEach(keyword => {
+          keyarray.push(keyword.keyword)
+        });
+        this.keywords = keyarray
+
+        let linkarray = [];
+        if (publication.content.links != null) {
+          publication.content.links.forEach(link => {
+            if (!link.link.includes('http') || !link.link.includes('https')){
+              linkarray.push('http://'+link.link)
+            }
+          });
+          this.links = linkarray
+        }
+        this.author = publication.user.name
+        this.likes = publication.likes
+      })
+    }
   }
 }

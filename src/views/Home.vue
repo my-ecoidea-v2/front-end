@@ -9,40 +9,12 @@
         <div id="search-btn"><iconSearch/></div>
       </div>
       <div class="content">
-        <publication
-        type="Eco-Idea"
-        description="The server is temporarily unable to service your request due to maintenance downtime or capacity problems. Please try again later. Additionally, a 503 Service Unavailable error was encountered while trying to use an ErrorDocument to handle the request."
-        likes="129"
-        favs='19392'
-        author='Quentin sar'
-        />
-        <publication
-        type="Eco-Idea"
-        description="En fait voilà parce-que voilà c'est tout"
-        likes="129"
-        favs='19392'
-        author='Quentin sar'
-        />
-        <publication
-        type="Eco-Idea"
-        description="En fait voilà parce-que voilà c'est tout"
-        likes="129"
-        favs='19392'
-        author='Quentin sar'
-        />
-        <publication
-        type="Eco-Idea"
-        description="En fait voilà parce-que voilà c'est tout"
-        likes="129"
-        favs='19392'
-        author='Quentin sar'
-        />
-        <publication
-        type="Eco-Idea"
-        description="En fait voilà parce-que voilà c'est tout"
-        likes="129"
-        favs='19392'
-        author='Quentin sar'
+        <publication v-for="publication in publications" v-bind:key="publication.id"
+        :type="publication.type"
+        :description="publication.content.description"
+        :likes="publication.content.likes"
+        :author='publication.user.name'
+        :token='publication.token'
         />
       </div>
     </div>

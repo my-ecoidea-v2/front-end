@@ -22,9 +22,9 @@
         <form class="form-login" id="form-login" action="" enctype='application/json'>
           <p id="error">{{ error }}</p>
           <label>Adresse mail
-          <input v-model="email" id="email" type="text" name="email" placeholder="ex : exemple@my-ecoidea.org"/></label>
+          <input v-on:keyup.enter="validated" v-model="email" id="email" type="text" name="email" placeholder="ex : exemple@my-ecoidea.org"/></label>
           <label>Mot de passe
-          <input v-model="password" id="password" type="password" name="password" placeholder="ex : monmdp"/></label>
+          <input v-on:keyup.enter="validated" v-model="password" id="password" type="password" name="password" placeholder="ex : monmdp"/></label>
           <div id="question">
             <router-link to='/mon-compte/inscription'>Pas encore de compte ?</router-link>
           </div>

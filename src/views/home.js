@@ -22,6 +22,38 @@ export default {
     Cookies,
     publication: publication,
     Wave, 
-    Footer
+    Footer,
   },
+  data: function () {
+    return {
+      publications: '',
+    }
+  },
+  mounted: function () {
+    this.getPublications();
+  },
+  methods: {
+    getPublications: function () {
+      fetch('http://api.my-ecoidea.org/api/publication/getFast', {
+        method: 'get',
+        credentials: 'same-origin',
+        headers: {
+          'Accept': 'application/json, text/plain, */*',
+          'Content-Type': 'application/json',
+          'cache-control': 'no-cache',
+          'Authorization': 'Bearer ' + localStorage.token
+        }
+      })
+      .then(response => { return response.text() })
+      .then((data) => {
+        this.publications = JSON.parse(data)['publications']
+        this.publications.forEach(publication => {
+          if (publication['type_id'] == 1)
+          {
+            publication.type = 'Eco-Idea'
+          }
+        });
+      })
+    }
+  }
 }

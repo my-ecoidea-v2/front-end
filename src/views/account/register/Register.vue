@@ -4,11 +4,11 @@
            <img src="@/assets/images/logo.png" alt="My-EcoIdea logo" class="img-rounded">
            <h2 class="title">Inscription</h2>
            <p id="error">{{ error }}</p>
-           <input v-model="name" id="name" type="text" name="name" placeholder="Nom d'utilisateur"/>
-           <input v-model="email" id="email" type="text" name="email" placeholder="Adresse e-mail"/>
-           <input v-model="password" id="password" type="password" name="password" placeholder="Mot de passe"/>
-           <input v-model="password_confirmation" id="password_confirmation" type="password" name="password_confirmation" placeholder="Mot de passe"/>
-           <input v-model="key" id="key" type="text" name="key" placeholder="Code bêta"/>
+           <input v-on:keyup.enter="validated" v-model="name" id="name" type="text" name="name" placeholder="Nom d'utilisateur"/>
+           <input v-on:keyup.enter="validated" v-model="email" id="email" type="text" name="email" placeholder="Adresse e-mail"/>
+           <input v-on:keyup.enter="validated" v-model="password" id="password" type="password" name="password" placeholder="Mot de passe"/>
+           <input v-on:keyup.enter="validated" v-model="password_confirmation" id="password_confirmation" type="password" name="password_confirmation" placeholder="Mot de passe"/>
+           <input v-on:keyup.enter="validated" v-model="key" id="key" type="text" name="key" placeholder="Code bêta"/>
            <div class="btn btn-lg btn-block" @click='validated'>Inscription</div>
          </form> -->
     <div class="col-xs-2 hidden-lg hidden-sm hidden-md"></div>
@@ -30,15 +30,15 @@
         <form class="form-login" id="form-login" action="" enctype='application/json'>
           <p id="error">{{ error }}</p>
           <label>Nom de mon compte :
-          <input v-model="name" id="name" type="text" name="name" placeholder="ex : My-EcoIdea"/></label>
+          <input v-on:keyup.enter="validated" v-model="name" id="name" type="text" name="name" placeholder="ex : My-EcoIdea"/></label>
           <label>Mon adresse mail :
-          <input v-model="email" id="email" type="text" name="email" placeholder="ex : exemple@my-ecoidea.org"/></label>
+          <input v-on:keyup.enter="validated" v-model="email" id="email" type="text" name="email" placeholder="ex : exemple@my-ecoidea.org"/></label>
           <label>Mon mot de passe :
-          <input v-model="password" id="password" type="password" name="password" placeholder="ex : monmdp"/></label>
+          <input v-on:keyup.enter="validated" v-model="password" id="password" type="password" name="password" placeholder="ex : monmdp"/></label>
           <label>Confirmer mon mot de passe
-          <input v-model="password_confirmation" id="password_confirmation" type="password" name="password_confirmation" placeholder="ex : monmdp"/></label>
+          <input v-on:keyup.enter="validated" v-model="password_confirmation" id="password_confirmation" type="password" name="password_confirmation" placeholder="ex : monmdp"/></label>
           <label>Code bêta (optionnel)
-          <input v-model="code" id="code" type="code" name="code" placeholder="ex : MYE-000-COD"/></label>
+          <input v-on:keyup.enter="validated" v-model="code" id="code" type="code" name="code" placeholder="ex : MYE-000-COD"/></label>
           <div id="question">
             <router-link to='/mon-compte/connexion'>Déjà un compte ?</router-link>
           </div>
