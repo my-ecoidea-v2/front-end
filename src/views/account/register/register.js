@@ -73,9 +73,7 @@ export default {
           this.error = JSON.parse(data)['error']
           $('#' + JSON.parse(data)['field']).addClass('error')
         } else if (Object.keys(JSON.parse(data)).includes('token')) {
-          localStorage.token = JSON.parse(data)['token']
-          store.commit('setLogin')
-          router.push({path: '/mon-compte/inscription'})
+          router.push({path: '/mon-compte/connexion'})
         }
       })
     }

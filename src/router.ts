@@ -11,14 +11,40 @@ const router = new Router({
   base: process.env.BASE_URL,
   routes: [
     {
+      path: '/mentions-legales',
+      name: 'mentions-legales',
+      component: () => import('@/views/legal/MentionsLegales.vue'),
+      meta: { unAuth: true }
+    },
+    {
+      path: '/CGU',
+      name: 'CGU',
+      component: () => import('@/views/legal/CGU.vue'),
+      meta: { unAuth: true }
+    },
+    {
+      path: '/equipe',
+      name: 'equipe',
+      component: () => import('@/views/legal/Equipe.vue'),
+      meta: { unAuth: true }
+    },
+    {
+      path: '/concept',
+      name: 'concept',
+      component: () => import('@/views/legal/Concept.vue'),
+      meta: { unAuth: true }
+    },
+    {
       path: '*',
       name: 'error',
-      component: () => import('@/views/errors/404.vue')
+      component: () => import('@/views/errors/404.vue'),
+      meta: { unAuth: true }
     },
     {
       path: '/maintenance',
       name: 'maintenance',
-      component: () => import('@/views/errors/Maintenance.vue')
+      component: () => import('@/views/errors/Maintenance.vue'),
+      meta: { unAuth: true }
     },
     {
       path: '/',
@@ -45,9 +71,21 @@ const router = new Router({
       meta: { noAuth: true }
     },
     {
+      path: '/mon-compte/favoris',
+      name: 'favoris',
+      component: () => import('@/views/user/meFavoris/MeFavoris.vue'),
+      meta: { yesAuth: true }
+    },
+    {
       path: '/publications/creer',
       name: 'publications-create',
       component: () => import('@/views/publications/create/Create.vue'),
+      meta: { yesAuth: true }
+    },
+    { 
+      path: '/publications/token=:token', 
+      component: () => import('@/components/composants/Idea.vue'),
+      props: true,
       meta: { yesAuth: true }
     },
     {
@@ -56,12 +94,12 @@ const router = new Router({
       component: () => import('@/views/landing/Landing.vue'),
       meta: { noAuth: true }
     },
-    { 
-      path: '/publications/token=:token', 
-      component: () => import('@/components/composants/Idea.vue'),
-      props: true,
-      meta: { yesAuth: true }
-    },
+    {
+    path: '/publications/success',
+    name: 'publications_send',
+    component: () => import('@/views/success/Publication_create.vue'),
+    meta: { yesAuth: true }
+  },
   ]
 })
 
@@ -125,5 +163,7 @@ router.beforeEach((to, from, next) => {
         query: { redirect: to.fullPath }
       })
     }
+  } else if (to.matched.some(record => record.meta.unAuth)) {
+    next();
   }
 })

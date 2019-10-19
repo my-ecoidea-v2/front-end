@@ -1,6 +1,8 @@
 import Wave from '@/assets/elem/wave.svg'
 import Footer from '@/components/layouts/footer/Footer.vue'
 
+import router from '@/router'
+
 export default {
   components: {
     Wave, 
@@ -63,11 +65,10 @@ export default {
       })
       .then(response => { return response.text() })
       .then((data) => {
-        console.log(data)
         if (Object.keys(JSON.parse(data)).includes('error')) {
           this.error = JSON.parse(data)['error']
         } else if (Object.keys(JSON.parse(data)).includes('token')) {
-          // router.push({path: '/publications/success'})
+          router.push({path: '/publications/success'})
         }
       })
       }

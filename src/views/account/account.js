@@ -3,6 +3,8 @@ import iconLogo from '@/assets/items/Logo_W.svg'
 import iconLike from '@/assets/items/Like.svg'
 import iconFollow from '@/assets/items/Follow.svg'
 
+import publication from '@/components/composants/Publications.vue'
+
 import store from '@/store'
 import router from '@/router'
 
@@ -12,13 +14,14 @@ export default {
     iconLink,
     iconLogo,
     iconLike,
-    iconFollow
+    iconFollow,
+    publication: publication
   },
   data: function () {
     return {
       name,
       publicationsCount: 0,
-      mePublications: null,
+      mePublications: '',
     }
   },
   mounted: function () {
@@ -49,13 +52,17 @@ export default {
           'Authorization': 'Bearer ' + localStorage.token
         }
       })
-        .then(response => { return response.text() })
-        .then((data) => {
-          this.mePublications = JSON.parse(data);
-          this.publicationCount = JSON.parse(data).lenght;
-          if (this.publicationCount == null) this.publicationCount == 0;
-          console.log(this.mePublications)
-          console.log(this.publicationCount)
+      .then(response => { return response.text() })
+      .then((data) => {
+        this.mePublications = JSON.parse(data)['publications'];
+        this.publicationsCount = this.mePublications.length;
+        if (this.publicationCount == null) { this.publicationsCount == 0; }
+        this.mePublications.forEach(publication => {
+          if (publication['type_id'] == 1)
+          {
+            publication.type = 'Eco-Idea'
+          }
+        });
       })
     },
     getUsername: function () {

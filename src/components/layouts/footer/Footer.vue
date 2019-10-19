@@ -4,13 +4,13 @@
     </div>
     <div class="informations">
       <p id="legal">
-        <a href="#">Mentions Légales</a> - 
-        <a href="#">CGU</a> - 
+        <router-link to="/mentions-legales">Mentions Légales</router-link> - 
+        <router-link to="/CGU">CGU</router-link> - 
         &copy; My-EcoIdea 2019 
       </p>
       <p class="present">
-        | <a href="#">Notre équipe</a> - 
-        <a href="#">Notre concept</a>
+        | <router-link to="/equipe">Notre équipe</router-link> - 
+        <router-link to="">Notre concept</router-link>
       </p>
     </div>
   </div>

@@ -41,6 +41,7 @@
           <input v-on:keyup.enter="validated" v-model="code" id="code" type="code" name="code" placeholder="ex : MYE-000-COD"/></label>
           <div id="question">
             <router-link to='/mon-compte/connexion'>Déjà un compte ?</router-link>
+            <p>En vous inscrivant, vous acceptez les Conditions Générales d'Utilisations</p>
           </div>
           <div class="btn btn-lg btn-block validated" @click='validated'>S'inscrire</div>
           </form>

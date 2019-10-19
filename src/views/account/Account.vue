@@ -20,6 +20,13 @@
         <div class="item" data-section="user-favorites">Favoris</div>
       </div>
       <section class="section user-publications" selected>
+        <publication v-for="publication in mePublications" v-bind:key="publication.id"
+        :type="publication.type"
+        :description="publication.content.description"
+        :likes="publication.content.likes"
+        :author='publication.user.name'
+        :token='publication.token'
+        />
       </section>
       <section class="section user-projects">
         <center style="margin-top: 60px">
