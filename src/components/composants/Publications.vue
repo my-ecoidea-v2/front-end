@@ -1,17 +1,17 @@
 <template>
-  <div class="box idea" id="publication" itemscope @click="open">
+  <div class="box idea" id="publication" itemscope>
     <div class="title">
-      <div id="fav"><fav/></div>
-      <p id="type">{{ type }}</p>
+      <div id="fav" @click="favoris"><isFav v-if="isFavoris"/><fav v-if="!isFavoris"/></div>
+      <p id="type" @click="open">{{ type }}</p>
     </div>
-    <div class="box-content">
+    <div class="box-content" @click="open">
       <p id="description">{{ description }}</p>
-      <div class="interactions">
-        <ul>
-          <li class="col-xs-6" id="like"><p><like/>{{ likes }}</p></li>
-          <li class="col-xs-6" id="author"><p id="author">- {{ author }}</p></li>
-        </ul>
-      </div>
+    </div>
+    <div class="interactions">
+      <ul>
+        <li class="col-xs-6" id="like" @click="like"><p><isLike v-if="isLiked"/><like v-if="!isLiked"/>{{ likes }}</p></li>
+        <li class="col-xs-6" id="author"><p id="author">- {{ author }}</p></li>
+      </ul>
     </div>
   </div>
 </template>

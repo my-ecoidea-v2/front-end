@@ -12,9 +12,11 @@
         <publication v-for="publication in publications" v-bind:key="publication.id"
         :type="publication.type"
         :description="publication.content.description"
-        :likes="publication.content.likes"
+        :likes="publication.likes"
         :author='publication.user.name'
         :token='publication.token'
+        :Rlike='publication.isLike'
+        :Rfavoris='publication.isFavoris'
         />
       </div>
     </div>

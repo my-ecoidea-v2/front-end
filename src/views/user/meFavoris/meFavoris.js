@@ -46,11 +46,11 @@ export default {
       })
       .then(response => { return response.text() })
       .then((data) => {
-        this.publications = JSON.parse(data)['publications']
+        this.publications = JSON.parse(data)['favoris']
         this.publications.forEach(publication => {
-          if (publication['type_id'] == 1)
+          if (publication.idea.type_id == 1)
           {
-            publication.type = 'Eco-Idea'
+            publication.idea.type = 'Eco-Idea'
           }
         });
       })

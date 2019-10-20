@@ -7,7 +7,7 @@
       <div class="content" style="margin-top: 25px !important">
         <div class="box idea">
           <div class="title">
-            <div id="fav"><fav/></div>
+            <div id="fav" @click="favoris"><isFav v-if="isFavoris"/><fav v-if="!isFavoris"/></div>
             <p id="type">Résumé</p>
           </div>
           <div class="resume">
@@ -33,7 +33,7 @@
           </div>
           <div class="box-content row">
             <ul>
-              <li class="col-xs-6" id="like"><p><like/>{{ likes }}</p></li>
+              <li class="col-xs-6" id="like" @click="like"><p><isLike v-if="isLiked"/><like v-if="!isLiked"/>{{ likes }}</p></li>
               <li class="col-xs-6" id="author"><p id="author">- {{ author }}</p></li>
             </ul>
           </div>

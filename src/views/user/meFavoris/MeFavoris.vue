@@ -8,11 +8,10 @@
       </div>
       <div class="content">
         <publication v-for="publication in publications" v-bind:key="publication.id"
-        :type="publication.type"
-        :description="publication.content.description"
-        :likes="publication.content.likes"
-        :author='publication.user.name'
-        :token='publication.token'
+        :type="publication.idea.type"
+        :description="publication.idea.content.description"
+        :likes="publication.idea.content.likes"
+        :token='publication.idea.token'
         />
       </div>
     </div>
