@@ -2,10 +2,10 @@
   <div class="success_publications">
     <div class="col-xs-2"></div>
     <div class="middle col-sm-8 col-xs-12 content">
-      <thesvg />
-      <h1>Oups !</h1>
-      <h2>La page que vous cherchez n'existe pas !</h2>
-      <p><router-link to='/'>Aller vers l'accueil du site</router-link></p>
+      <checkg />
+      <h1>Merci !</h1>
+      <h2>Vous êtes inscrit(e) sur My-EcoIdea !</h2>
+      <p><router-link to='/mon-compte/connexion'>Aller vers la page de connection</router-link></p>
     </div>
   </div>
 </template>
@@ -29,7 +29,7 @@
     h1
       font-size 3em
       text-align center
-      color #dd6161
+      color #85C174
       font-weight bold
     h2
       color #353535
@@ -39,11 +39,11 @@
 </style>
 
 <script>
-import thesvg from '@/assets/items/error_r.svg'
+import checkg from '@/assets/items/check_g.svg'
 
 export default {
   components: {
-    thesvg
+    checkg
   }
 }
 </script>

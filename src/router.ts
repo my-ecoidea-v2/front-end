@@ -44,7 +44,7 @@ const router = new Router({
       path: '/maintenance',
       name: 'maintenance',
       component: () => import('@/views/errors/Maintenance.vue'),
-      meta: { unAuth: true }
+      meta: { isMaintenance: true }
     },
     {
       path: '/',
@@ -107,6 +107,20 @@ export default router;
 
 router.beforeEach((to, from, next) => {
   if (to.matched.some(record => record.meta.noAuth)) {
+    fetch('http://api.my-ecoidea.org/api/isMaintenance', {
+      method: 'get',
+      credentials: 'same-origin',
+      headers: {
+        'Accept': 'application/json, text/plain, */*',
+        'Content-Type': 'application/json',
+        'cache-control': 'no-cache',
+        'Authorization': 'Bearer ' + localStorage.token
+      }
+    })
+    .then(response => { return response.text() })
+    .then((data) => {
+      console.log(data)
+      if (JSON.parse(data)['maintenance'] == true) { next({path: '/maintenance',query: { redirect: to.fullPath }})}});
     if (localStorage.token != null) {
       fetch('http://api.my-ecoidea.org/api/user/get', {
         method: 'get',
@@ -131,10 +145,38 @@ router.beforeEach((to, from, next) => {
         }
       })
     } else {
-      next()
+      fetch('http://api.my-ecoidea.org/api/isMaintenance', {
+        method: 'get',
+        credentials: 'same-origin',
+        headers: {
+          'Accept': 'application/json, text/plain, */*',
+          'Content-Type': 'application/json',
+          'cache-control': 'no-cache',
+          'Authorization': 'Bearer ' + localStorage.token
+        }
+      })
+      .then(response => { return response.text() })
+      .then((data) => {
+        console.log(data)
+        if (JSON.parse(data)['maintenance'] == true) { next({path: '/maintenance',query: { redirect: to.fullPath }})}});
+      next();
     }
   } else if (to.matched.some(record => record.meta.yesAuth)) {
     if (localStorage.token != null) {
+      fetch('http://api.my-ecoidea.org/api/isMaintenance', {
+        method: 'get',
+        credentials: 'same-origin',
+        headers: {
+          'Accept': 'application/json, text/plain, */*',
+          'Content-Type': 'application/json',
+          'cache-control': 'no-cache',
+          'Authorization': 'Bearer ' + localStorage.token
+        }
+      })
+      .then(response => { return response.text() })
+      .then((data) => {
+        console.log(data)
+        if (JSON.parse(data)['maintenance'] == true) { next({path: '/maintenance',query: { redirect: to.fullPath }})}});
       fetch('http://api.my-ecoidea.org/api/user/get', {
         method: 'get',
         credentials: 'same-origin',
@@ -154,16 +196,74 @@ router.beforeEach((to, from, next) => {
           })
         } else 
         {
+          fetch('http://api.my-ecoidea.org/api/isMaintenance', {
+            method: 'get',
+            credentials: 'same-origin',
+            headers: {
+              'Accept': 'application/json, text/plain, */*',
+              'Content-Type': 'application/json',
+              'cache-control': 'no-cache',
+              'Authorization': 'Bearer ' + localStorage.token
+            }
+          })
+          .then(response => { return response.text() })
+          .then((data) => {
+            console.log(data)
+            if (JSON.parse(data)['maintenance'] == true) { next({path: '/maintenance',query: { redirect: to.fullPath }})}});
           next()
         }
       })
     } else {
+      fetch('http://api.my-ecoidea.org/api/isMaintenance', {
+        method: 'get',
+        credentials: 'same-origin',
+        headers: {
+          'Accept': 'application/json, text/plain, */*',
+          'Content-Type': 'application/json',
+          'cache-control': 'no-cache',
+          'Authorization': 'Bearer ' + localStorage.token
+        }
+      })
+      .then(response => { return response.text() })
+      .then((data) => {
+        console.log(data)
+        if (JSON.parse(data)['maintenance'] == true) { next({path: '/maintenance',query: { redirect: to.fullPath }})}});
       next({
         path: '/bienvenue',
         query: { redirect: to.fullPath }
       })
     }
   } else if (to.matched.some(record => record.meta.unAuth)) {
+    fetch('http://api.my-ecoidea.org/api/isMaintenance', {
+      method: 'get',
+      credentials: 'same-origin',
+      headers: {
+        'Accept': 'application/json, text/plain, */*',
+        'Content-Type': 'application/json',
+        'cache-control': 'no-cache',
+        'Authorization': 'Bearer ' + localStorage.token
+      }
+    })
+    .then(response => { return response.text() })
+    .then((data) => {
+      console.log(data)
+      if (JSON.parse(data)['maintenance'] == true) { next({path: '/maintenance',query: { redirect: to.fullPath }})}});
+    next();
+  } else if (to.matched.some(record => record.meta.isMaintenance)) {
+    fetch('http://api.my-ecoidea.org/api/isMaintenance', {
+      method: 'get',
+      credentials: 'same-origin',
+      headers: {
+        'Accept': 'application/json, text/plain, */*',
+        'Content-Type': 'application/json',
+        'cache-control': 'no-cache',
+        'Authorization': 'Bearer ' + localStorage.token
+      }
+    })
+    .then(response => { return response.text() })
+    .then((data) => {
+      console.log(data)
+      if (JSON.parse(data)['maintenance'] == false) { next({path: '/',query: { redirect: to.fullPath }})}});
     next();
   }
 })
