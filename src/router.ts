@@ -107,7 +107,7 @@ export default router;
 
 router.beforeEach((to, from, next) => {
   if (to.matched.some(record => record.meta.noAuth)) {
-    fetch('http://api.my-ecoidea.org/api/isMaintenance', {
+    fetch('https://api.my-ecoidea.org/api/isMaintenance', {
       method: 'get',
       credentials: 'same-origin',
       headers: {
@@ -122,7 +122,7 @@ router.beforeEach((to, from, next) => {
       console.log(data)
       if (JSON.parse(data)['maintenance'] == true) { next({path: '/maintenance',query: { redirect: to.fullPath }})}});
     if (localStorage.token != null) {
-      fetch('http://api.my-ecoidea.org/api/user/get', {
+      fetch('https://api.my-ecoidea.org/api/user/get', {
         method: 'get',
         credentials: 'same-origin',
         headers: {
@@ -145,7 +145,7 @@ router.beforeEach((to, from, next) => {
         }
       })
     } else {
-      fetch('http://api.my-ecoidea.org/api/isMaintenance', {
+      fetch('https://api.my-ecoidea.org/api/isMaintenance', {
         method: 'get',
         credentials: 'same-origin',
         headers: {
@@ -163,7 +163,7 @@ router.beforeEach((to, from, next) => {
     }
   } else if (to.matched.some(record => record.meta.yesAuth)) {
     if (localStorage.token != null) {
-      fetch('http://api.my-ecoidea.org/api/isMaintenance', {
+      fetch('https://api.my-ecoidea.org/api/isMaintenance', {
         method: 'get',
         credentials: 'same-origin',
         headers: {
@@ -177,7 +177,7 @@ router.beforeEach((to, from, next) => {
       .then((data) => {
         console.log(data)
         if (JSON.parse(data)['maintenance'] == true) { next({path: '/maintenance',query: { redirect: to.fullPath }})}});
-      fetch('http://api.my-ecoidea.org/api/user/get', {
+      fetch('https://api.my-ecoidea.org/api/user/get', {
         method: 'get',
         credentials: 'same-origin',
         headers: {
@@ -196,7 +196,7 @@ router.beforeEach((to, from, next) => {
           })
         } else 
         {
-          fetch('http://api.my-ecoidea.org/api/isMaintenance', {
+          fetch('https://api.my-ecoidea.org/api/isMaintenance', {
             method: 'get',
             credentials: 'same-origin',
             headers: {
@@ -214,7 +214,7 @@ router.beforeEach((to, from, next) => {
         }
       })
     } else {
-      fetch('http://api.my-ecoidea.org/api/isMaintenance', {
+      fetch('https://api.my-ecoidea.org/api/isMaintenance', {
         method: 'get',
         credentials: 'same-origin',
         headers: {
@@ -234,7 +234,7 @@ router.beforeEach((to, from, next) => {
       })
     }
   } else if (to.matched.some(record => record.meta.unAuth)) {
-    fetch('http://api.my-ecoidea.org/api/isMaintenance', {
+    fetch('https://api.my-ecoidea.org/api/isMaintenance', {
       method: 'get',
       credentials: 'same-origin',
       headers: {
@@ -250,7 +250,7 @@ router.beforeEach((to, from, next) => {
       if (JSON.parse(data)['maintenance'] == true) { next({path: '/maintenance',query: { redirect: to.fullPath }})}});
     next();
   } else if (to.matched.some(record => record.meta.isMaintenance)) {
-    fetch('http://api.my-ecoidea.org/api/isMaintenance', {
+    fetch('https://api.my-ecoidea.org/api/isMaintenance', {
       method: 'get',
       credentials: 'same-origin',
       headers: {

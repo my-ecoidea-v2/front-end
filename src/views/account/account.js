@@ -42,7 +42,7 @@ export default {
   },
   methods: {
     getPublications: function () {
-      fetch('http://api.my-ecoidea.org/api/user/mePublications', {
+      fetch('https://api.my-ecoidea.org/api/user/mePublications', {
         method: 'get',
         credentials: 'same-origin',
         headers: {
@@ -66,7 +66,7 @@ export default {
       })
     },
     getUsername: function () {
-      fetch('http://api.my-ecoidea.org/api/user/get', {
+      fetch('https://api.my-ecoidea.org/api/user/get', {
         method: 'get',
         credentials: 'same-origin',
         headers: {
@@ -82,7 +82,7 @@ export default {
       })
     },
     logout: function () {
-      fetch('http://api.my-ecoidea.org/api/user/logout', {
+      fetch('https://api.my-ecoidea.org/api/user/logout', {
         method: 'post',
         credentials: 'same-origin',
         headers: {

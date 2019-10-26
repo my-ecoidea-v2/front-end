@@ -42,7 +42,7 @@ export default {
   },
   methods: {
     getPublication: function () {
-      fetch('http://api.my-ecoidea.org/api/publication/get', {
+      fetch('https://api.my-ecoidea.org/api/publication/get', {
         method: 'post',
         credentials: 'same-origin',
         headers: {
@@ -69,8 +69,8 @@ export default {
         let linkarray = [];
         if (publication.content.links != null) {
           publication.content.links.forEach(link => {
-            if (!link.link.includes('http') || !link.link.includes('https')){
-              linkarray.push('http://'+link.link)
+            if (!link.link.includes('https') || !link.link.includes('httpss')){
+              linkarray.push('https://'+link.link)
             }
           });
           this.links = linkarray
@@ -82,7 +82,7 @@ export default {
       })
     },
     like: function () {
-      fetch('http://api.my-ecoidea.org/api/publication/interact/like', {
+      fetch('https://api.my-ecoidea.org/api/publication/interact/like', {
         method: 'put',
         credentials: 'same-origin',
         headers: {
@@ -100,7 +100,7 @@ export default {
       })
     },
     favoris: function () {
-      fetch('http://api.my-ecoidea.org/api/publication/interact/favoris', {
+      fetch('https://api.my-ecoidea.org/api/publication/interact/favoris', {
         method: 'put',
         credentials: 'same-origin',
         headers: {

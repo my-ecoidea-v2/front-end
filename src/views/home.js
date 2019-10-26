@@ -34,7 +34,7 @@ export default {
   },
   methods: {
     getPublications: function () {
-      fetch('http://api.my-ecoidea.org/api/publication/getFast', {
+      fetch('https://api.my-ecoidea.org/api/publication/getFast', {
         method: 'get',
         credentials: 'same-origin',
         headers: {

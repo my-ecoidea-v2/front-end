@@ -41,7 +41,7 @@ export default {
         } else { $('#keyword_2').removeClass('error') }
         if (this.keyword_3 == '') { $('#keyword_3').addClass('error'); this.error = 'Resumé vide'; return;
         } else { $('#keyword_3').removeClass('error') }
-        fetch('http://api.my-ecoidea.org/api/publication/create', {
+        fetch('https://api.my-ecoidea.org/api/publication/create', {
         method: 'post',
         credentials: 'same-origin',
         headers: {

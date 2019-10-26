@@ -31,7 +31,7 @@ export default {
         this.error = 'Mot de passe vide'
         return;
       } else { $('#password').removeClass('error') }
-      fetch('http://api.my-ecoidea.org/api/user/login', {
+      fetch('https://api.my-ecoidea.org/api/user/login', {
         method: 'post',
         credentials: 'same-origin',
         headers: {

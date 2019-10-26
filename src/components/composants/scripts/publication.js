@@ -55,7 +55,7 @@ export default {
       router.push({path: '/publications/token='+this.token});
     },
     like: function () {
-      fetch('http://api.my-ecoidea.org/api/publication/interact/like', {
+      fetch('https://api.my-ecoidea.org/api/publication/interact/like', {
         method: 'put',
         credentials: 'same-origin',
         headers: {
@@ -73,7 +73,7 @@ export default {
       })
     },
     favoris: function () {
-      fetch('http://api.my-ecoidea.org/api/publication/interact/favoris', {
+      fetch('https://api.my-ecoidea.org/api/publication/interact/favoris', {
         method: 'put',
         credentials: 'same-origin',
         headers: {
